@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exams Calendar & Info - Safarnama</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .exams-hero {
+            background: linear-gradient(135deg, #be185d 0%, #db2777 50%, #ec4899 100%);
+            padding: 80px 100px; text-align: center; color: white;
+        }
+        .exams-hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 15px; }
+        .exams-hero p { font-size: 20px; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        .exams-content { padding: 60px 100px; background: #fdf2f8; }
+
+        .exam-section { background: white; border-radius: 20px; padding: 40px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .exam-section h2 { color: #be185d; font-size: 28px; margin-bottom: 25px; border-bottom: 2px solid #fce7f3; padding-bottom: 10px; }
+
+        .exam-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        .exam-card { 
+            border: 1px solid #fce7f3; border-radius: 16px; padding: 25px; transition: all 0.3s;
+            display: flex; flex-direction: column; height: 100%;
+        }
+        .exam-card:hover { border-color: #db2777; background: #fff1f2; transform: translateY(-3px); }
+        .exam-badge { 
+            align-self: flex-start; background: #fce7f3; color: #be185d; 
+            padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px;
+        }
+        .exam-card h3 { font-size: 20px; color: #1e293b; margin-bottom: 10px; }
+        .exam-card p { color: #64748b; font-size: 14px; margin-bottom: 20px; flex-grow: 1; }
+        .exam-meta { display: flex; justify-content: space-between; font-size: 13px; color: #475569; border-top: 1px solid #f1f5f9; padding-top: 15px; }
+        .exam-date { font-weight: 600; color: #db2777; }
+
+        .calendar-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .calendar-table th { background: #be185d; color: white; padding: 15px; text-align: left; border-radius: 8px 8px 0 0; }
+        .calendar-table td { background: white; padding: 15px; border-bottom: 1px solid #e2e8f0; color: #334155; }
+        .calendar-table tr:last-child td { border-bottom: none; }
+        .calendar-table tr:hover td { background: #fff1f2; }
+
+        @media (max-width: 768px) {
+            .exams-hero, .exams-content { padding: 50px 20px; }
+            .exams-hero h1 { font-size: 32px; }
+            .calendar-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html" style="display: flex; height: 100%; align-items: center;"><img src="images/safarnama.png" alt="Safarnama"></a></div>
+        <nav class="nav-menu">
+            <a href="career.html" class="orange-btn">Courses</a> 
+            <a href="colleges.html" class="orange-btn">Colleges</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <section class="exams-hero">
+        <h1>📅 Top Entrance Exams</h1>
+        <p>Comprehensive guide to India's most competitive entrance examinations. Important dates, eligibility, and preparation tips.</p>
+    </section>
+
+    <div class="exams-content">
+        
+        <div class="exam-section">
+            <h2>Engineering Entrance Exams</h2>
+            <div class="exam-grid">
+                <div class="exam-card">
+                    <span class="exam-badge">National Level</span>
+                    <h3>JEE Main</h3>
+                    <p>Joint Entrance Examination for admission to NITs, IIITs, and other central/state funded technical institutes.</p>
+                    <div class="exam-meta">
+                        <span>Frequency: 2x/Year</span>
+                        <span class="exam-date">Jan & Apr</span>
+                    </div>
+                </div>
+                <div class="exam-card">
+                    <span class="exam-badge">Advanced</span>
+                    <h3>JEE Advanced</h3>
+                    <p>The gateway to the prestigious IITs. Only top rankers of JEE Main are eligible to appear.</p>
+                    <div class="exam-meta">
+                        <span>Eligibility: Top JEE Main</span>
+                        <span class="exam-date">May/June</span>
+                    </div>
+                </div>
+                <div class="exam-card">
+                    <span class="exam-badge">Regional</span>
+                    <h3>BITSAT</h3>
+                    <p>Birla Institute of Technology and Science Admission Test for BITS Pilani, Goa, and Hyderabad campuses.</p>
+                    <div class="exam-meta">
+                        <span>Mode: Online</span>
+                        <span class="exam-date">May/June</span>
+                    </div>
+                </div>
+                <div class="exam-card">
+                    <span class="exam-badge">State Level</span>
+                    <h3>MHT CET</h3>
+                    <p>Maharashtra Common Entrance Test for engineering and pharmacy admissions in Maharashtra.</p>
+                    <div class="exam-meta">
+                        <span>State: Maharashtra</span>
+                        <span class="exam-date">May</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="exam-section">
+            <h2>Medical & Science Exams</h2>
+            <div class="exam-grid">
+                <div class="exam-card">
+                    <span class="exam-badge">Medical</span>
+                    <h3>NEET UG</h3>
+                    <p>National Eligibility cum Entrance Test for MBBS, BDS, and other medical courses in India.</p>
+                    <div class="exam-meta">
+                        <span>Mode: Offline</span>
+                        <span class="exam-date">May First Sunday</span>
+                    </div>
+                </div>
+                <div class="exam-card">
+                    <span class="exam-badge">Research</span>
+                    <h3>IISER IAT</h3>
+                    <p>IISER Aptitude Test for admission to 5-year BS-MS dual degree program at IISERs.</p>
+                    <div class="exam-meta">
+                        <span>Focus: Basic Sciences</span>
+                        <span class="exam-date">June</span>
+                    </div>
+                </div>
+                <a href="medical-specializations.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge">Medical PG</span>
+                    <h3>NEET PG</h3>
+                    <p>Entrance examination for MD/MS and postgraduate diploma courses.</p>
+                    <div class="exam-meta">
+                        <span>Level: Postgraduate</span>
+                        <span class="exam-date">March</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="exam-section">
+            <h2>Management & Law</h2>
+            <div class="exam-grid">
+                <div class="exam-card">
+                    <span class="exam-badge">Management</span>
+                    <h3>CAT</h3>
+                    <p>Common Admission Test for admission to IIMs and other top business schools in India.</p>
+                    <div class="exam-meta">
+                        <span>Key: Top IIMs</span>
+                        <span class="exam-date">November</span>
+                    </div>
+                </div>
+                <div class="exam-card">
+                    <span class="exam-badge">Management</span>
+                    <h3>XAT</h3>
+                    <p>Xavier Aptitude Test conducted by XLRI Jamshedpur for management admissions.</p>
+                    <div class="exam-meta">
+                        <span>Difficulty: High</span>
+                        <span class="exam-date">January</span>
+                    </div>
+                </div>
+                <div class="exam-card">
+                    <span class="exam-badge">Law</span>
+                    <h3>CLAT</h3>
+                    <p>Common Law Admission Test for admission to 22 National Law Universities (NLUs).</p>
+                    <div class="exam-meta">
+                        <span>Course: LLB/LLM</span>
+                        <span class="exam-date">December</span>
+                    </div>
+                </div>
+            </div>
+        <div class="exam-section">
+            <h2>Government & Civil Services</h2>
+            <div class="exam-grid">
+                <a href="upsc-course.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge" style="background: #e0f2fe; color: #0284c7;">UPSC CSE</span>
+                    <h3>Union Public Service Commission</h3>
+                    <p>Civil Services Examination for IAS, IPS, IFS, and other central services. The toughest exam in India.</p>
+                    <div class="exam-meta">
+                        <span>Role: Grade A Officer</span>
+                        <span class="exam-date">Prelims: May</span>
+                    </div>
+                </a>
+                <a href="ssc-cgl-course.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge" style="background: #e0f2fe; color: #0284c7;">SSC CGL</span>
+                    <h3>Staff Selection Commission</h3>
+                    <p>Combined Graduate Level Exam for Group B and C posts in various ministries.</p>
+                    <div class="exam-meta">
+                        <span>Role: Inspector/Asst</span>
+                        <span class="exam-date">Sep/Oct</span>
+                    </div>
+                </a>
+                <a href="railways-course.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge" style="background: #e0f2fe; color: #0284c7;">RRB NTPC</span>
+                    <h3>Railway Recruitment Board</h3>
+                    <p>Non-Technical Popular Categories exam for Station Master, Clerk, and other posts.</p>
+                    <div class="exam-meta">
+                        <span>Vacancies: High</span>
+                        <span class="exam-date">Varies</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="exam-section">
+            <h2>Defence & Banking</h2>
+            <div class="exam-grid">
+                <a href="defence-course.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge" style="background: #dcfce7; color: #166534;">NDA / CDS</span>
+                    <h3>National Defence Academy</h3>
+                    <p>Join the Army, Navy, or Air Force as a commissioned officer.</p>
+                    <div class="exam-meta">
+                        <span>Entry: 10+2 / Grad</span>
+                        <span class="exam-date">Apr & Sep</span>
+                    </div>
+                </a>
+                <a href="banking-course.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge" style="background: #dcfce7; color: #166534;">IBPS PO</span>
+                    <h3>Institute of Banking Personnel</h3>
+                    <p>Probationary Officer exam for recruitment in public sector banks.</p>
+                    <div class="exam-meta">
+                        <span>Sector: Banking</span>
+                        <span class="exam-date">October</span>
+                    </div>
+                </a>
+                <a href="banking-course.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge" style="background: #dcfce7; color: #166534;">SBI PO</span>
+                    <h3>State Bank of India</h3>
+                    <p>Independent recruitment exam for Probationary Officers in SBI.</p>
+                    <div class="exam-meta">
+                        <span>Salary: High</span>
+                        <span class="exam-date">November</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="exam-section">
+            <h2>Private & University Exams</h2>
+            <div class="exam-grid">
+                <div class="exam-card">
+                    <span class="exam-badge">Private</span>
+                    <h3>VITEEE</h3>
+                    <p>Vellore Institute of Technology Engineering Entrance Examination.</p>
+                    <div class="exam-meta">
+                        <span>Institute: VIT</span>
+                        <span class="exam-date">April</span>
+                    </div>
+                </div>
+                <div class="exam-card">
+                    <span class="exam-badge">Private</span>
+                    <h3>SRMJEEE</h3>
+                    <p>SRM Joint Engineering Entrance Examination for SRM University campuses.</p>
+                    <div class="exam-meta">
+                        <span>Mode: Online</span>
+                        <span class="exam-date">April</span>
+                    </div>
+                </div>
+                <a href="article-cuet-2026.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge">Central</span>
+                    <h3>CUET UG</h3>
+                    <p>Common University Entrance Test for admission to Central Universities.</p>
+                    <div class="exam-meta">
+                        <span>Scope: All Central Univs</span>
+                        <span class="exam-date">May</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="exam-section">
+            <h2>Board Exams</h2>
+            <div class="exam-grid">
+                <a href="article-cbse.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge" style="background: #fef3c7; color: #d97706;">National</span>
+                    <h3>CBSE Board</h3>
+                    <p>Central Board of Secondary Education. Official guide for Class 10 & 12 exams.</p>
+                    <div class="exam-meta">
+                        <span>Class: 10 & 12</span>
+                        <span class="exam-date">Feb-Mar</span>
+                    </div>
+                </a>
+                <a href="article-icse.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge" style="background: #fef3c7; color: #d97706;">CISCE / ISC</span>
+                    <h3>ICSE Board</h3>
+                    <p>Council for the Indian School Certificate Examinations. Comprehensive syllabus info.</p>
+                    <div class="exam-meta">
+                        <span>Difficulty: High</span>
+                        <span class="exam-date">Feb-Mar</span>
+                    </div>
+                </a>
+                <a href="article-state-boards.html" class="exam-card" style="text-decoration: none;">
+                    <span class="exam-badge" style="background: #f3f4f6; color: #4b5563;">State</span>
+                    <h3>State Boards</h3>
+                    <p>Information on UP Board, Maharashtra Board, Bihar Board, and other state exams.</p>
+                    <div class="exam-meta">
+                        <span>Scope: Regional</span>
+                        <span class="exam-date">Mar-Apr</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="exam-section">
+            <h2>2026 Exam Calendar</h2>
+            <table class="calendar-table">
+                <thead>
+                    <tr>
+                        <th>Exam Name</th>
+                        <th>Registration Starts</th>
+                        <th>Exam Date (Tentative)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JEE Main Session 1</td>
+                        <td>November 2025</td>
+                        <td>January 2026</td>
+                    </tr>
+                    <tr>
+                        <td>JEE Main Session 2</td>
+                        <td>February 2026</td>
+                        <td>April 2026</td>
+                    </tr>
+                    <tr>
+                        <td>NEET UG</td>
+                        <td>February 2026</td>
+                        <td>May 3, 2026</td>
+                    </tr>
+                    <tr>
+                        <td>CUET UG</td>
+                        <td>February 2026</td>
+                        <td>May 2026</td>
+                    </tr>
+                    <tr>
+                        <td>BITSAT</td>
+                        <td>January 2026</td>
+                        <td>May/June 2026</td>
+                    </tr>
+                    <tr>
+                        <td>CAT 2026</td>
+                        <td>August 2026</td>
+                        <td>November 2026</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <footer class="site-footer"><div class="footer-copyright">© 2026 Safarnamastudy.in — All Rights Reserved</div></footer>
+</body>
+</html>

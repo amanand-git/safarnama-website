@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafarEasy Apps - Make Your Safar Easy</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ================= SAFAREASY APPS PAGE STYLES ================= */
+        
+        /* Dark theme for entire page */
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+        }
+
+        /* Override navbar to match dark theme */
+        .navbar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Position nav-menu so Login right edge aligns with SafarEasy Apps button */
+        .nav-menu {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .apps-hero {
+            min-height: 50vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apps-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Floating particles animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; top: 80%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 60%; top: 40%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 80%; top: 60%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 40%; top: 10%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 90%; top: 30%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 30%; top: 70%; animation-delay: 6s; }
+        .particle:nth-child(8) { left: 70%; top: 90%; animation-delay: 7s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-30px) translateX(10px) scale(1.5);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: #10b981;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-badge span {
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .apps-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .apps-hero h1 .highlight {
+            background: linear-gradient(135deg, #10b981, #34d399, #6ee7b7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .apps-hero .tagline {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .apps-hero .subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            color: #64748b;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apps Grid Section */
+        .apps-section {
+            padding: 80px 40px;
+            background: transparent;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            color: #94a3b8;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .app-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--card-color-1), var(--card-color-2));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .app-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .app-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--card-color-1), var(--card-color-2));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .app-card:hover .app-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .app-card p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .app-card .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .status-badge.coming-soon {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            color: #b45309;
+        }
+
+        .status-badge.available {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            color: #059669;
+        }
+
+        /* Card Colors */
+        .app-card.compressor {
+            --card-color-1: #3b82f6;
+            --card-color-2: #2563eb;
+        }
+
+        .app-card.enhancer {
+            --card-color-1: #8b5cf6;
+            --card-color-2: #7c3aed;
+        }
+
+        .app-card.img-to-pdf {
+            --card-color-1: #f59e0b;
+            --card-color-2: #d97706;
+        }
+
+        .app-card.pdf-merger {
+            --card-color-1: #ef4444;
+            --card-color-2: #dc2626;
+        }
+
+        /* Coming Soon Overlay */
+        .coming-soon-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 24px;
+        }
+
+        .app-card.coming-soon-card:hover .coming-soon-overlay {
+            opacity: 1;
+        }
+
+        .coming-soon-text {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer CTA */
+        .cta-section {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: #059669;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .apps-hero h1 {
+                font-size: 32px;
+            }
+
+            .apps-hero .tagline {
+                font-size: 18px;
+            }
+
+            .apps-section {
+                padding: 60px 20px;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .apps-grid {
+                gap: 20px;
+            }
+
+            .app-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+    <img src="images/safarnama.png" alt="Safarnama">
+</div>
+        <nav class="nav-menu">
+            <a href="career.html" class="orange-btn">Courses</a>
+            <a href="colleges.html" class="orange-btn">Colleges</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="apps-hero">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>✨</span> Presenting SafarEasy Apps
+            </div>
+            
+            <h1>
+                Why Go Anywhere Else?<br>
+                <span class="highlight">Make Your Safar Easy & Smooth</span>
+            </h1>
+            
+            <p class="tagline">
+                All the tools you need in one place — no need to hop between websites. 
+                Simplify your work with our powerful, easy-to-use apps.
+            </p>
+            
+            <p class="subtitle">🚀 Free to use • ⚡ Lightning fast • 🔒 Secure & Private</p>
+        </div>
+    </section>
+
+    <!-- Apps Grid Section -->
+    <section class="apps-section">
+        <div class="section-header">
+            <h2>Our Powerful Apps</h2>
+            <p>Simple tools to make your life easier</p>
+        </div>
+
+        <div class="apps-grid">
+            
+            <!-- Image Compressor -->
+            <a href="image-compressor.html" class="app-card compressor">
+                <div class="app-icon">🗜️</div>
+                <h3>Image Compressor</h3>
+                <p>Compress your images without losing quality. Perfect for faster uploads and saving storage.</p>
+                <span class="status-badge available">✅ Available Now</span>
+            </a>
+
+            <!-- Image Enhancer -->
+            <a href="image-enhancer.html" class="app-card enhancer">
+                <div class="app-icon">✨</div>
+                <h3>Image Enhancer</h3>
+                <p>Enhance your photos with powerful tools. Improve clarity, brightness, and colors instantly.</p>
+                <span class="status-badge available">✅ Available Now</span>
+            </a>
+
+            <!-- Image to PDF -->
+            <a href="image-to-pdf.html" class="app-card img-to-pdf">
+                <div class="app-icon">📄</div>
+                <h3>Image to PDF</h3>
+                <p>Convert multiple images to a single PDF document. Arrange, preview, and download easily.</p>
+                <span class="status-badge available">✅ Available Now</span>
+            </a>
+
+            <!-- PDF Merger -->
+            <a href="pdf-merger.html" class="app-card pdf-merger">
+                <div class="app-icon">📑</div>
+                <h3>PDF Merger</h3>
+                <p>Combine multiple PDFs into one. Drag, drop, reorder, and merge in seconds.</p>
+                <span class="status-badge available">✅ Available Now</span>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>More Apps Coming Soon! 🎉</h2>
+        <p>We're working hard to bring you more useful tools. Stay tuned!</p>
+        <a href="index.html" class="cta-btn">
+            <span>←</span> Back to Home
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-col brand">
+                <h3>Safarnamastudy<span>.in</span></h3>
+                <p>
+                    Safarnama is a comprehensive platform to help students
+                    discover the right colleges and courses across India.
+                    Simplifying education decisions with trusted insights.
+                </p>
+                <div class="footer-social">
+                    <span class="connect-text">Connect with us:</span>
+                    <a href="https://www.instagram.com/safar.nama.in/" 
+                       target="_blank" 
+                       class="social-icon"
+                       aria-label="Instagram">
+                        <img src="images/instagram copy.svg" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Medical -->
+            <div class="footer-col">
+                <h4>Medical</h4>
+                <a href="colleges.html#mbbsSection">MBBS Colleges</a>
+                <a href="colleges.html#mbbsSection">AIIMS Colleges</a>
+                <a href="colleges.html#mbbsSection">Medical Colleges in India</a>
+            </div>
+
+            <!-- Engineering -->
+            <div class="footer-col">
+                <h4>Engineering</h4>
+                <a href="colleges.html#engineeringSection">IIT Colleges</a>
+                <a href="colleges.html#engineeringSection">NIT Colleges</a>
+                <a href="colleges.html#engineeringSection">Top Engineering Colleges</a>
+            </div>
+
+            <!-- MBA -->
+            <div class="footer-col">
+                <h4>MBA</h4>
+                <a href="colleges.html#mbaSection">MBA Colleges in India</a>
+                <a href="colleges.html#mbaSection">Top MBA Colleges</a>
+                <a href="colleges.html#mbaSection">MBA Specializations</a>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+            <a href="about.html">About Us</a>
+            <span class="separator">|</span>
+            <a href="contact.html">Contact Us</a>
+            <span class="separator">|</span>
+            <a href="terms.html">Terms & Conditions</a>
+            <span class="separator">|</span>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+
+        <div class="footer-copyright">
+            © 2026 Safarnamastudy.in — All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

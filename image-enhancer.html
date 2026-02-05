@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Enhancer - SafarEasy Apps</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ================= IMAGE ENHANCER PAGE STYLES ================= */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+        }
+
+        /* Override navbar to match dark theme */
+        .navbar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Section */
+        .enhancer-hero {
+            padding: 100px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enhancer-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #a78bfa;
+            transform: translateX(-5px);
+        }
+
+        .enhancer-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .enhancer-hero h1 .highlight {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa, #c4b5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .enhancer-hero p {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Container */
+        .enhancer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        /* Upload Section */
+        .upload-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(139, 92, 246, 0.5);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+
+        .upload-section:hover,
+        .upload-section.dragover {
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.1);
+            transform: scale(1.01);
+        }
+
+        .upload-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .upload-section h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .upload-section p {
+            color: #94a3b8;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .upload-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        /* Editor Section */
+        .editor-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .editor-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .editor-header h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            color: white;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .new-image-btn, .reset-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .new-image-btn:hover, .reset-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Editor Layout */
+        .editor-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .editor-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Image Preview */
+        .image-preview-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .preview-header {
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .preview-header h4 {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .image-canvas-container {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            background: repeating-conic-gradient(#1a1a2e 0% 25%, #16162a 0% 50%) 50% / 20px 20px;
+        }
+
+        #imageCanvas {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Controls Panel */
+        .controls-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .controls-panel h4 {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .control-group {
+            margin-bottom: 25px;
+        }
+
+        .control-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .control-label span {
+            color: #e2e8f0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .control-value {
+            background: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .control-slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .control-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(139, 92, 246, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        .control-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+
+        /* Preset Filters */
+        .presets-section {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .presets-section h5 {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .presets-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .preset-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 12px 8px;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .preset-btn:hover {
+            background: rgba(139, 92, 246, 0.3);
+            border-color: rgba(139, 92, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .preset-icon {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        /* Download Section */
+        .download-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.5);
+        }
+
+        /* ================= THANK YOU POPUP ================= */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 20px;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+            animation: fadeInOverlay 0.3s ease;
+        }
+
+        @keyframes fadeInOverlay {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .popup-content {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 32px;
+            padding: 50px 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            box-shadow: 0 25px 80px rgba(139, 92, 246, 0.2);
+            animation: popupSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popupSlideIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.8) translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .popup-icon {
+            font-size: 80px;
+            margin-bottom: 25px;
+            animation: bounceIcon 1s ease infinite;
+        }
+
+        @keyframes bounceIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .popup-content h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .popup-content h2 .highlight {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .popup-messages {
+            margin-bottom: 30px;
+        }
+
+        .popup-messages p {
+            color: #94a3b8;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .popup-messages .main-message {
+            color: #e2e8f0;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .popup-tagline {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .popup-tagline p {
+            color: #a78bfa;
+            font-size: 16px;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .popup-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .popup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5);
+        }
+
+        /* Confetti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            animation: confettiFall 3s ease-in-out forwards;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(400px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .enhancer-hero h1 {
+                font-size: 28px;
+            }
+
+            .upload-section {
+                padding: 40px 20px;
+            }
+
+            .editor-section {
+                padding: 20px;
+            }
+
+            .controls-panel {
+                padding: 20px;
+            }
+
+            .popup-content {
+                padding: 40px 25px;
+            }
+
+            .popup-content h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/safarnama.png" alt="Safarnama">
+        </div>
+        <nav class="nav-menu">
+            <a href="career.html" class="orange-btn">Courses</a>
+            <a href="colleges.html" class="orange-btn">Colleges</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="enhancer-hero">
+        <div class="hero-content">
+            <a href="safareasy-apps.html" class="back-btn">
+                ← Back to SafarEasy Apps
+            </a>
+            <h1>
+                <span class="highlight">✨ Image Enhancer</span>
+            </h1>
+            <p>Enhance your photos with powerful tools. Adjust brightness, contrast, saturation, and more instantly.</p>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="enhancer-container">
+        
+        <!-- Upload Section -->
+        <div class="upload-section" id="uploadSection">
+            <div class="upload-icon">🖼️</div>
+            <h3>Drop your image here</h3>
+            <p>or click to browse from your device</p>
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                Choose Image
+            </button>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
+
+        <!-- Editor Section -->
+        <div class="editor-section" id="editorSection">
+            <div class="editor-header">
+                <h3>✨ Enhance Your Image</h3>
+                <div class="header-buttons">
+                    <button class="reset-btn" onclick="resetFilters()">🔄 Reset</button>
+                    <button class="new-image-btn" onclick="resetEditor()">+ New Image</button>
+                </div>
+            </div>
+
+            <div class="editor-layout">
+                <!-- Image Preview -->
+                <div class="image-preview-box">
+                    <div class="preview-header">
+                        <h4>📸 Preview</h4>
+                    </div>
+                    <div class="image-canvas-container">
+                        <canvas id="imageCanvas"></canvas>
+                    </div>
+                </div>
+
+                <!-- Controls Panel -->
+                <div class="controls-panel">
+                    <h4>🎨 Adjustments</h4>
+
+                    <!-- Brightness -->
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>☀️ Brightness</span>
+                            <span class="control-value" id="brightnessValue">100%</span>
+                        </div>
+                        <input type="range" min="0" max="200" value="100" class="control-slider" id="brightness" oninput="applyFilters()">
+                    </div>
+
+                    <!-- Contrast -->
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>🔲 Contrast</span>
+                            <span class="control-value" id="contrastValue">100%</span>
+                        </div>
+                        <input type="range" min="0" max="200" value="100" class="control-slider" id="contrast" oninput="applyFilters()">
+                    </div>
+
+                    <!-- Saturation -->
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>🎨 Saturation</span>
+                            <span class="control-value" id="saturationValue">100%</span>
+                        </div>
+                        <input type="range" min="0" max="200" value="100" class="control-slider" id="saturation" oninput="applyFilters()">
+                    </div>
+
+                    <!-- Blur -->
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>💫 Blur</span>
+                            <span class="control-value" id="blurValue">0px</span>
+                        </div>
+                        <input type="range" min="0" max="10" value="0" class="control-slider" id="blur" oninput="applyFilters()">
+                    </div>
+
+                    <!-- Grayscale -->
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>⬛ Grayscale</span>
+                            <span class="control-value" id="grayscaleValue">0%</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="0" class="control-slider" id="grayscale" oninput="applyFilters()">
+                    </div>
+
+                    <!-- Sepia -->
+                    <div class="control-group">
+                        <div class="control-label">
+                            <span>📜 Sepia</span>
+                            <span class="control-value" id="sepiaValue">0%</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="0" class="control-slider" id="sepia" oninput="applyFilters()">
+                    </div>
+
+                    <!-- Preset Filters -->
+                    <div class="presets-section">
+                        <h5>🎭 Quick Presets</h5>
+                        <div class="presets-grid">
+                            <button class="preset-btn" onclick="applyPreset('vivid')">
+                                <span class="preset-icon">🌈</span>
+                                Vivid
+                            </button>
+                            <button class="preset-btn" onclick="applyPreset('warm')">
+                                <span class="preset-icon">🔥</span>
+                                Warm
+                            </button>
+                            <button class="preset-btn" onclick="applyPreset('cool')">
+                                <span class="preset-icon">❄️</span>
+                                Cool
+                            </button>
+                            <button class="preset-btn" onclick="applyPreset('vintage')">
+                                <span class="preset-icon">📷</span>
+                                Vintage
+                            </button>
+                            <button class="preset-btn" onclick="applyPreset('dramatic')">
+                                <span class="preset-icon">🎬</span>
+                                Dramatic
+                            </button>
+                            <button class="preset-btn" onclick="applyPreset('bw')">
+                                <span class="preset-icon">⚫</span>
+                                B&W
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Download Button -->
+                    <div class="download-section">
+                        <button class="download-btn" onclick="downloadImage()">
+                            ⬇️ Download Enhanced Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Popup -->
+    <div class="popup-overlay" id="thankYouPopup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">✕</button>
+            
+            <div class="popup-icon">✨</div>
+            
+            <h2>Thanks for Choosing <span class="highlight">SafarEasy!</span></h2>
+            
+            <div class="popup-messages">
+                <p class="main-message">Your enhanced image has been downloaded! 🎨</p>
+                <p>We're thrilled to be part of your creative journey.</p>
+                <p>Every pixel matters, and so do you! 💜</p>
+            </div>
+
+            <div class="popup-tagline">
+                <p>"Transform your moments into masterpieces with SafarEasy!" ✨</p>
+            </div>
+
+            <button class="popup-btn" onclick="closePopup()">
+                <span>💜</span> Continue Creating
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ================= IMAGE ENHANCER JAVASCRIPT =================
+
+        let originalImage = null;
+        const canvas = document.getElementById('imageCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // DOM Elements
+        const uploadSection = document.getElementById('uploadSection');
+        const editorSection = document.getElementById('editorSection');
+        const fileInput = document.getElementById('fileInput');
+        const thankYouPopup = document.getElementById('thankYouPopup');
+
+        // Filter controls
+        const filters = {
+            brightness: document.getElementById('brightness'),
+            contrast: document.getElementById('contrast'),
+            saturation: document.getElementById('saturation'),
+            blur: document.getElementById('blur'),
+            grayscale: document.getElementById('grayscale'),
+            sepia: document.getElementById('sepia')
+        };
+
+        // Drag and Drop
+        uploadSection.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadSection.classList.add('dragover');
+        });
+
+        uploadSection.addEventListener('dragleave', () => {
+            uploadSection.classList.remove('dragover');
+        });
+
+        uploadSection.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadSection.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0 && files[0].type.startsWith('image/')) {
+                handleFile(files[0]);
+            }
+        });
+
+        uploadSection.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        // Handle File Upload
+        function handleFile(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = () => {
+                    originalImage = img;
+                    
+                    // Set canvas size
+                    const maxWidth = 800;
+                    const maxHeight = 600;
+                    let width = img.width;
+                    let height = img.height;
+                    
+                    if (width > maxWidth) {
+                        height = (maxWidth / width) * height;
+                        width = maxWidth;
+                    }
+                    if (height > maxHeight) {
+                        width = (maxHeight / height) * width;
+                        height = maxHeight;
+                    }
+                    
+                    canvas.width = width;
+                    canvas.height = height;
+                    
+                    // Draw image
+                    ctx.drawImage(img, 0, 0, width, height);
+                    
+                    // Show editor section
+                    uploadSection.style.display = 'none';
+                    editorSection.classList.add('active');
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Apply Filters
+        function applyFilters() {
+            if (!originalImage) return;
+            
+            const brightness = filters.brightness.value;
+            const contrast = filters.contrast.value;
+            const saturation = filters.saturation.value;
+            const blur = filters.blur.value;
+            const grayscale = filters.grayscale.value;
+            const sepia = filters.sepia.value;
+            
+            // Update value displays
+            document.getElementById('brightnessValue').textContent = brightness + '%';
+            document.getElementById('contrastValue').textContent = contrast + '%';
+            document.getElementById('saturationValue').textContent = saturation + '%';
+            document.getElementById('blurValue').textContent = blur + 'px';
+            document.getElementById('grayscaleValue').textContent = grayscale + '%';
+            document.getElementById('sepiaValue').textContent = sepia + '%';
+            
+            // Build filter string
+            const filterString = `
+                brightness(${brightness}%)
+                contrast(${contrast}%)
+                saturate(${saturation}%)
+                blur(${blur}px)
+                grayscale(${grayscale}%)
+                sepia(${sepia}%)
+            `;
+            
+            // Apply filter to canvas
+            ctx.filter = filterString;
+            ctx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
+        }
+
+        // Apply Preset Filters
+        function applyPreset(preset) {
+            const presets = {
+                vivid: { brightness: 110, contrast: 120, saturation: 140, blur: 0, grayscale: 0, sepia: 0 },
+                warm: { brightness: 105, contrast: 105, saturation: 110, blur: 0, grayscale: 0, sepia: 20 },
+                cool: { brightness: 100, contrast: 110, saturation: 90, blur: 0, grayscale: 10, sepia: 0 },
+                vintage: { brightness: 95, contrast: 90, saturation: 80, blur: 0, grayscale: 20, sepia: 40 },
+                dramatic: { brightness: 90, contrast: 150, saturation: 120, blur: 0, grayscale: 0, sepia: 0 },
+                bw: { brightness: 100, contrast: 120, saturation: 0, blur: 0, grayscale: 100, sepia: 0 }
+            };
+            
+            const p = presets[preset];
+            if (!p) return;
+            
+            filters.brightness.value = p.brightness;
+            filters.contrast.value = p.contrast;
+            filters.saturation.value = p.saturation;
+            filters.blur.value = p.blur;
+            filters.grayscale.value = p.grayscale;
+            filters.sepia.value = p.sepia;
+            
+            applyFilters();
+        }
+
+        // Reset Filters
+        function resetFilters() {
+            filters.brightness.value = 100;
+            filters.contrast.value = 100;
+            filters.saturation.value = 100;
+            filters.blur.value = 0;
+            filters.grayscale.value = 0;
+            filters.sepia.value = 0;
+            applyFilters();
+        }
+
+        // Reset Editor
+        function resetEditor() {
+            uploadSection.style.display = 'block';
+            editorSection.classList.remove('active');
+            fileInput.value = '';
+            originalImage = null;
+            resetFilters();
+        }
+
+        // Download Image
+        function downloadImage() {
+            if (!originalImage) return;
+            
+            const link = document.createElement('a');
+            link.download = 'enhanced_image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            
+            showPopup();
+        }
+
+        // Show Popup
+        function showPopup() {
+            thankYouPopup.classList.add('active');
+            createConfetti();
+        }
+
+        // Close Popup
+        function closePopup() {
+            thankYouPopup.classList.remove('active');
+        }
+
+        // Create Confetti
+        function createConfetti() {
+            const colors = ['#8b5cf6', '#a78bfa', '#ec4899', '#f472b6', '#10b981', '#fbbf24'];
+            const popup = document.querySelector('.popup-content');
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                popup.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 5000);
+            }
+        }
+
+        // Close popup on overlay click
+        thankYouPopup.addEventListener('click', (e) => {
+            if (e.target === thankYouPopup) {
+                closePopup();
+            }
+        });
+
+        // Close popup on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && thankYouPopup.classList.contains('active')) {
+                closePopup();
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Courses - Safarnama</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .discipline-hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            padding: 80px 100px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .discipline-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.5;
+        }
+        .discipline-hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 15px; position: relative; }
+        .discipline-hero p { font-size: 20px; opacity: 0.9; max-width: 700px; margin: 0 auto; position: relative; }
+        
+        .discipline-content { padding: 60px 100px; background: #f8fafc; }
+        
+        .section-block {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .section-block h2 {
+            font-size: 28px;
+            color: #1e293b;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-block h2 .icon { font-size: 32px; }
+        .section-block p { color: #64748b; font-size: 16px; line-height: 1.8; }
+        
+        .courses-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        .course-item {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .course-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            border-color: #3b82f6;
+        }
+        .course-item h3 {
+            font-size: 18px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .course-item p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+        .course-item .course-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #3b82f6;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .course-item .course-link:hover { gap: 10px; }
+        
+        .colleges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        .college-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+        .college-card:hover {
+            border-color: #f97316;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(249,115,22,0.15);
+        }
+        .college-card h4 {
+            font-size: 16px;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .college-card .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: linear-gradient(135deg, #f97316, #fb923c);
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .view-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .view-all-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(249,115,22,0.4);
+        }
+
+        .specializations-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .spec-tag {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            color: #1e40af;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .discipline-hero { padding: 50px 20px; }
+            .discipline-hero h1 { font-size: 32px; }
+            .discipline-content { padding: 30px 20px; }
+            .section-block { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html" style="display: flex; height: 100%; align-items: center;"><img src="../images/safarnama.png" alt="Safarnama"></a>
+        </div>
+        <nav class="nav-menu">
+            <a href="../career.html" class="orange-btn">Courses</a> 
+            <a href="../colleges.html" class="orange-btn">Colleges</a>
+            <a href="../login.html" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="discipline-hero">
+        <h1>📊 Management</h1>
+        <p>Explore management courses and discover top business schools across India. Build your career in business leadership, finance, and entrepreneurship.</p>
+    </section>
+
+    <!-- Content -->
+    <div class="discipline-content">
+
+        <!-- What is Management -->
+        <div class="section-block">
+            <h2><span class="icon">📖</span> What is Management?</h2>
+            <p>Management is the process of planning, organizing, leading, and controlling an organization's resources to achieve specific goals. It involves decision-making, strategy formulation, and effective utilization of human and material resources. Management education prepares students for leadership roles in various sectors including corporate, finance, marketing, human resources, and entrepreneurship.</p>
+            <p style="margin-top: 15px;">A career in management offers diverse opportunities across industries, with roles ranging from business analysts and marketing managers to CEOs and entrepreneurs. Management graduates are highly sought after by top companies worldwide.</p>
+        </div>
+
+        <!-- Courses Under Management -->
+        <div class="section-block">
+            <h2><span class="icon">🎓</span> Courses Under Management</h2>
+            <div class="courses-list">
+                <a href="../mba-course.html" class="course-item">
+                    <h3>MBA</h3>
+                    <p>Master of Business Administration - 2 years postgraduate program</p>
+                    <span class="course-link">Learn More →</span>
+                </a>
+                <a href="../bba.html" class="course-item">
+                    <h3>BBA</h3>
+                    <p>Bachelor of Business Administration - 3 years undergraduate program</p>
+                    <span class="course-link">Learn More →</span>
+                </a>
+                <a href="../bms-course.html" class="course-item">
+                    <h3>BMS</h3>
+                    <p>Bachelor of Management Studies - 3 years undergraduate program</p>
+                    <span class="course-link">Learn More →</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Top Colleges -->
+        <div class="section-block">
+            <h2><span class="icon">🏛️</span> Top Management Colleges</h2>
+            <div class="colleges-grid">
+                <a href="../colleges.html#mbaSection" class="college-card">
+                    <span class="badge">MBA</span>
+                    <h4>Top MBA Colleges in India</h4>
+                    <p style="color: #64748b; font-size: 14px; margin-top: 8px;">IIM Ahmedabad, IIM Bangalore, IIM Calcutta & more</p>
+                </a>
+                <a href="../colleges.html#bbaSection" class="college-card">
+                    <span class="badge">BBA</span>
+                    <h4>Top BBA Colleges in India</h4>
+                    <p style="color: #64748b; font-size: 14px; margin-top: 8px;">Christ University, NMIMS, Symbiosis & more</p>
+                </a>
+            </div>
+            <a href="../colleges.html#mbaSection" class="view-all-btn">
+                View All Management Colleges →
+            </a>
+        </div>
+
+        <!-- Specializations -->
+        <div class="section-block">
+            <h2><span class="icon">⭐</span> Popular Specializations</h2>
+            <div class="specializations-list">
+                <span class="spec-tag">Finance</span>
+                <span class="spec-tag">Marketing</span>
+                <span class="spec-tag">Human Resources</span>
+                <span class="spec-tag">Operations</span>
+                <span class="spec-tag">Business Analytics</span>
+                <span class="spec-tag">International Business</span>
+                <span class="spec-tag">Entrepreneurship</span>
+                <span class="spec-tag">Supply Chain Management</span>
+                <span class="spec-tag">Healthcare Management</span>
+                <span class="spec-tag">IT Management</span>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-copyright">
+            © 2026 Safarnama.in — All Rights Reserved
+        </div>
+    </footer>
+
+</body>
+</html>

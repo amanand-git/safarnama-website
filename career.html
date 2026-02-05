@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Career | Safarnama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Career Page CSS -->
+    <link rel="stylesheet" href="css/career.css" />
+  </head>
+
+  <body>
+    <!-- ================= TOP HEADER ================= -->
+    <!-- Top Header -->
+    <div class="top-header">
+      <div class="logo">
+        <img src="images/safarnama.png" alt="Safarnama">
+      </div>
+      <div class="top-controls">
+        <!-- CATEGORIES DROPDOWN -->
+        <div class="dropdown">
+          <button class="drop-btn">Categories ▾</button>
+          <div class="dropdown-glass">
+            <div class="glass-col">
+              <a href="#" data-filter="engineering">Engineering</a>
+              <a href="#" data-filter="medical">Medical</a>
+              <a href="#" data-filter="data-analyst">Data Analyst</a>
+              <a href="#" data-filter="management">Management</a>
+              <a href="#" data-filter="business">Business</a>
+            </div>
+            <div class="glass-col">
+              <a href="#" data-filter="agriculture">Agriculture</a>
+              <a href="#" data-filter="coding">Coding</a>
+              <a href="#" data-filter="computer-science">Computer Science</a>
+              <a href="#" data-filter="law">LAW</a>
+              <a href="#" data-filter="government">Government</a>
+            </div>
+          </div>
+        </div>
+        <!-- SEARCH -->
+        <input type="text" class="search-input" id="careerSearch" placeholder="Search careers...">
+      </div>
+    </div>
+
+    <!-- Blue Navigation Bar -->
+    <div class="blue-navbar">
+      <div class="nav-items">
+        <a href="colleges.html#mbaSection" class="nav-item menu-btn" data-menu="mba">MBA</a>
+        <a href="colleges.html#engineeringSection" class="nav-item menu-btn" data-menu="engineering">Engineering</a>
+        <a href="colleges.html#mbbsSection" class="nav-item menu-btn" data-menu="medical">Medical</a>
+        <a href="career.html" class="nav-item menu-btn" data-menu="design">Design</a>
+        <a href="study-abroad.html" class="nav-item menu-btn" data-menu="abroad">Study Abroad</a>
+        <a href="colleges.html#agriSection" class="nav-item menu-btn" data-menu="agriculture">Agriculture</a>
+        <a href="online-courses.html" class="nav-item menu-btn" data-menu="online">Online</a>
+        <a href="exams.html" class="nav-item exams-highlight">Exams</a>
+      </div>
+    </div>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="career-content">
+      <!-- TOP FILTER BAR (NEXT STEP) -->
+      <section class="career-filters">
+        <!-- yahan next phase me Popular / Featured / Science etc aayega -->
+      </section>
+
+      <!-- CAREER GRID PLACEHOLDER -->
+      <!-- ================= CAREER GRID ================= -->
+      <section class="career-grid">
+        <div class="career-card">BBA</div>
+        <div class="career-card">BTech</div>
+        <div class="career-card">BCA</div>
+        <div class="career-card">MBA</div>
+        <div class="career-card">Data Science</div>
+        <div class="career-card">MBBS</div>
+        <div class="career-card">BCom</div>
+        <div class="career-card">Agriculture</div>
+      </section>
+
+      <!-- ===== TOP FILTER BAR ===== -->
+      <section class="career-filters">
+        <div class="filter-row">
+          <button class="filter-btn active" id="showAllBtn">
+            Popular Courses
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= CAREER COURSES GRID ================= -->
+    <section class="career-video-section">
+      <div class="career-video-grid" id="careerGrid">
+        <!-- Management -->
+        <a
+          href="mba-course.html"
+          class="course-card"
+          data-category="management"
+        >
+          <div class="thumb">
+            <img src="images/mba.jpg" alt="MBA" />
+          </div>
+          <h3>MBA</h3>
+        </a>
+
+        <!-- Engineering -->
+        <a
+          href="btech-course.html"
+          class="course-card"
+          data-category="engineering"
+        >
+          <div class="thumb">
+            <img src="images/btech.png" alt="BTech" />
+          </div>
+          <h3>B.Tech</h3>
+        </a>
+
+        <!-- Medical -->
+        <a
+          href="mbbs-course.html"
+          class="course-card"
+          data-category="medical"
+        >
+          <div class="thumb">
+            <img src="images/doc.png" alt="MBBS" />
+          </div>
+          <h3>MBBS</h3>
+        </a>
+
+        <!-- Business -->
+        <a
+          href="bcom-course.html"
+          class="course-card"
+          data-category="business"
+        >
+          <div class="thumb">
+            <img src="images/bcom.png" alt="BCom" />
+          </div>
+          <h3>B.Com</h3>
+        </a>
+
+        <!-- Data Analyst -->
+        <a
+          href="sql-course.html"
+          class="course-card"
+          data-category="data-analyst"
+        >
+          <div class="thumb">
+            <img src="images/sql.png" alt="SQL" />
+          </div>
+          <h3>SQL for Data Analysis</h3>
+        </a>
+
+        <!-- Computer Science -->
+        <a
+          href="bca-course.html"
+          class="course-card"
+          data-category="computer-science"
+        >
+          <div class="thumb">
+            <img src="images/bca.png" alt="BCA" />
+          </div>
+          <h3>BCA</h3>
+        </a>
+
+        <!-- Business -->
+        <a
+          href="cfa-course.html"
+          class="course-card"
+          data-category="business"
+        >
+          <div class="thumb">
+            <img src="images/sss.png" alt="CFA" />
+          </div>
+          <h3>CFA</h3>
+        </a>
+
+        <!-- Coding -->
+        <a
+          href="python-course.html"
+          class="course-card"
+          data-category="coding"
+        >
+          <div class="thumb">
+            <img src="images/PM.png" alt="Python" />
+          </div>
+          <h3>Python Programming</h3>
+        </a>
+
+        <!-- Business -->
+        <a
+          href="digital-marketing-course.html"
+          class="course-card"
+          data-category="business"
+        >
+          <div class="thumb">
+            <img src="images/dm.png" alt="Digital Marketing" />
+          </div>
+          <h3>Digital Marketing</h3>
+        </a>
+
+        <!-- Medical -->
+        <a
+          href="bpharma-course.html"
+          class="course-card"
+          data-category="medical"
+        >
+          <div class="thumb">
+            <img src="images/bf.png" alt="B-Pharma" />
+          </div>
+          <h3>B-Pharma</h3>
+        </a>
+
+        <!-- Business -->
+        <a
+          href="ca-course.html"
+          class="course-card"
+          data-category="business"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 05_42_43 PM.png"
+              alt="CA"
+            />
+          </div>
+          <h3>CA</h3>
+        </a>
+
+        <!-- Engineering -->
+        <a
+          href="mtech-course.html"
+          class="course-card"
+          data-category="engineering"
+        >
+          <div class="thumb">
+            <img src="images/MTECH.png" alt="M.Tech" />
+          </div>
+          <h3>M-TECH</h3>
+        </a>
+
+        <!-- Law -->
+        <a
+          href="llb-course.html"
+          class="course-card"
+          data-category="law"
+        >
+          <div class="thumb">
+            <img src="images/llb.png" alt="LLB" />
+          </div>
+          <h3>LLB</h3>
+        </a>
+
+        <!-- Medical -->
+        <a
+          href="bsc-nursing-course.html"
+          class="course-card"
+          data-category="medical"
+        >
+          <div class="thumb">
+            <img src="images/bbbb.png" alt="BSC NURSING" />
+          </div>
+          <h3>BSC NURSING</h3>
+        </a>
+
+        <!-- Computer Science -->
+        <a
+          href="machine-learning-course.html"
+          class="course-card"
+          data-category="computer-science"
+        >
+          <div class="thumb">
+            <img src="images/Mcl.png" alt="Machine Learning" />
+          </div>
+          <h3>Machine Learning</h3>
+        </a>
+
+        <!-- Government -->
+        <a
+          href="upsc-course.html"
+          class="course-card"
+          data-category="government"
+        >
+          <div class="thumb">
+            <img src="images/upse.png" alt="UPSC CSE" />
+          </div>
+          <h3>UPSC CSE</h3>
+        </a>
+
+        <!-- Agriculture -->
+        <a
+          href="agriculture-course.html"
+          class="course-card"
+          data-category="agriculture"
+        >
+          <div class="thumb">
+            <img src="images/Agri.png" alt="B.Sc in Agriculture" />
+          </div>
+          <h3>B.Sc in Agriculture</h3>
+        </a>
+
+        <!-- Coding -->
+        <a
+          href="cpp-course.html"
+          class="course-card hidden"
+          data-category="coding"
+        >
+          <div class="thumb">
+            <img src="images/ccc.png" alt="C/C++ Programming" />
+          </div>
+          <h3>C / C++ Programming</h3>
+        </a>
+
+        <!-- Management -->
+        <a
+          href="entrepreneurship-course.html"
+          class="course-card"
+          data-category="management"
+        >
+          <div class="thumb">
+            <img src="images/eng.png" alt="Entrepreneurship" />
+          </div>
+          <h3>Entrepreneurship Development</h3>
+        </a>
+
+        <!-- Coding -->
+        <a
+          href="fullstack-course.html"
+          class="course-card"
+          data-category="coding"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 06_59_50 PM.png"
+              alt="Full Stack"
+            />
+          </div>
+          <h3>Full Stack Web Development</h3>
+        </a>
+
+        <!-- Computer Science -->
+        <a
+          href="mca-course.html"
+          class="course-card"
+          data-category="computer-science"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_05_04 PM.png"
+              alt="MCA"
+            />
+          </div>
+          <h3>MCA</h3>
+        </a>
+
+        <!-- Computer Science -->
+        <a
+          href="cybersecurity-course.html"
+          class="course-card"
+          data-category="computer-science"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_06_09 PM.png"
+              alt="Cyber Security"
+            />
+          </div>
+          <h3>Cyber Security & Ethical Hacking</h3>
+        </a>
+
+        <!-- Computer Science -->
+        <a
+          href="nlp-course.html"
+          class="course-card"
+          data-category="computer-science"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_12_15 PM.png"
+              alt="NLP"
+            />
+          </div>
+          <h3>NLP</h3>
+        </a>
+
+        <!-- Government -->
+        <a
+          href="ssc-cgl-course.html"
+          class="course-card"
+          data-category="government"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_09_07 PM.png"
+              alt="SSC CGL"
+            />
+          </div>
+          <h3>SSC CGL</h3>
+        </a>
+
+        <!-- Government -->
+        <a
+          href="railways-course.html"
+          class="course-card"
+          data-category="government"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_13_36 PM.png"
+              alt="Railways"
+            />
+          </div>
+          <h3>Railways</h3>
+        </a>
+
+        <!-- Government -->
+        <a
+          href="defence-course.html"
+          class="course-card"
+          data-category="government"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_10_24 PM.png"
+              alt="Defence"
+            />
+          </div>
+          <h3>Defence</h3>
+        </a>
+
+        <!-- Government -->
+        <a
+          href="teaching-course.html"
+          class="course-card"
+          data-category="government"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_15_48 PM.png"
+              alt="Teaching Exams"
+            />
+          </div>
+          <h3>Teaching Exams</h3>
+        </a>
+
+        <!-- Government -->
+        <a
+          href="banking-course.html"
+          class="course-card"
+          data-category="government"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_17_26 PM.png"
+              alt="Banking Exams"
+            />
+          </div>
+          <h3>Banking Exams</h3>
+        </a>
+
+        <!-- Management -->
+        <a
+          href="bms-course.html"
+          class="course-card"
+          data-category="management"
+        >
+          <div class="thumb">
+            <img src="images/bms.png" alt="BMS" />
+          </div>
+          <h3>BMS</h3>
+        </a>
+
+        <!-- Medical -->
+        <a
+          href="paramedical-course.html"
+          class="course-card"
+          data-category="medical"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_20_20 PM.png"
+              alt="Paramedical"
+            />
+          </div>
+          <h3>Paramedical Courses</h3>
+        </a>
+
+        <!-- Medical -->
+        <a
+          href="bds-course.html"
+          class="course-card"
+          data-category="medical"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_21_56 PM.png"
+              alt="BDS"
+            />
+          </div>
+          <h3>BDS</h3>
+        </a>
+
+        <!-- Medical -->
+        <a
+          href="bams-course.html"
+          class="course-card"
+          data-category="medical"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_24_20 PM.png"
+              alt="BAMS"
+            />
+          </div>
+          <h3>BAMS</h3>
+        </a>
+
+        <!-- Medical -->
+        <a
+          href="bhms-course.html"
+          class="course-card"
+          data-category="medical"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_25_33 PM.png"
+              alt="BHMS"
+            />
+          </div>
+          <h3>BHMS</h3>
+        </a>
+
+        <!-- Coding -->
+        <a
+          href="java-course.html"
+          class="course-card"
+          data-category="coding"
+        >
+          <div class="thumb">
+            <img
+              src="images/rear-view-programmer-working-all-night-long.jpg"
+              alt="Java"
+            />
+          </div>
+          <h3>Java Programming</h3>
+        </a>
+
+        <!-- Coding -->
+        <a
+          href="app-development-course.html"
+          class="course-card"
+          data-category="coding"
+        >
+          <div class="thumb">
+            <img
+              src="images/ChatGPT Image Jan 31, 2026, 07_28_16 PM.png"
+              alt="App Development"
+            />
+          </div>
+          <h3>App Development</h3>
+        </a>
+
+        <!-- Computer Science -->
+        <a
+          href="cybersecurity-course.html"
+          class="course-card"
+          data-category="computer-science"
+        >
+          <div class="thumb">
+            <img
+              src="images/cybersecurity-concept-illustration.jpg"
+              alt="Cyber Security"
+            />
+          </div>
+          <h3>Cyber Security & Ethical Hacking</h3>
+        </a>
+
+        <!-- Law -->
+        <a
+          href="llm-course.html"
+          class="course-card"
+          data-category="law"
+        >
+          <div class="thumb">
+            <img src="images/llm.png" alt="LLM" />
+          </div>
+          <h3>LLM</h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= ALL SCRIPTS ================= -->
+
+    <!-- Load More Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".course-card");
+        const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+        if (!loadMoreBtn) {
+          return; // If no load more button, skip this script
+        }
+
+        const CARDS_PER_ROW = 4;
+        const INITIAL_ROWS = 5;
+        const LOAD_MORE_ROWS = 2;
+
+        const INITIAL_VISIBLE = CARDS_PER_ROW * INITIAL_ROWS;
+        const LOAD_MORE_COUNT = CARDS_PER_ROW * LOAD_MORE_ROWS;
+
+        let visibleCount = INITIAL_VISIBLE;
+
+        // STEP 1: hide extra cards
+        cards.forEach((card, index) => {
+          if (index >= INITIAL_VISIBLE) {
+            card.classList.add("hidden");
+          }
+        });
+
+        // STEP 2: hide button if not needed
+        if (cards.length <= INITIAL_VISIBLE) {
+          loadMoreBtn.style.display = "none";
+        }
+
+        // STEP 3: click load more
+        loadMoreBtn.addEventListener("click", () => {
+          const nextLimit = visibleCount + LOAD_MORE_COUNT;
+
+          cards.forEach((card, index) => {
+            if (index < nextLimit) {
+              card.classList.remove("hidden");
+            }
+          });
+
+          visibleCount = nextLimit;
+
+          if (visibleCount >= cards.length) {
+            loadMoreBtn.style.display = "none";
+          }
+        });
+      });
+    </script>
+
+    <!-- Search Script -->
+    <script>
+      const searchInput = document.getElementById("careerSearch");
+      const grid = document.getElementById("careerGrid");
+
+      const cards = Array.from(document.querySelectorAll(".course-card"));
+
+      searchInput.addEventListener("input", function () {
+        const query = this.value.toLowerCase().trim();
+
+        let matched = [];
+        let unmatched = [];
+
+        cards.forEach((card) => {
+          const title = card.querySelector("h3").innerText.toLowerCase();
+
+          if (title.includes(query)) {
+            matched.push(card);
+            card.style.display = "flex";
+          } else {
+            unmatched.push(card);
+            card.style.display = "none";
+          }
+        });
+
+        // 🔠 Alphabetical sort (A → Z)
+        matched.sort((a, b) => {
+          const t1 = a.querySelector("h3").innerText.toLowerCase();
+          const t2 = b.querySelector("h3").innerText.toLowerCase();
+          return t1.localeCompare(t2);
+        });
+
+        // 🧲 Re-append matched cards on top
+        matched.forEach((card) => grid.appendChild(card));
+      });
+    </script>
+
+    <!-- Categories Dropdown Toggle & Filter Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dropBtn = document.querySelector(".drop-btn");
+        const dropdownGlass = document.querySelector(".dropdown-glass");
+        const categoryLinks = document.querySelectorAll(
+          ".glass-col a[data-filter]",
+        );
+        const courseCards = document.querySelectorAll(".course-card");
+        const showAllBtn = document.getElementById("showAllBtn");
+
+        // Toggle dropdown on button click
+        if (dropBtn && dropdownGlass) {
+          dropBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            dropdownGlass.classList.toggle("active");
+          });
+
+          // Close dropdown when clicking outside
+          document.addEventListener("click", function (e) {
+            if (!e.target.closest(".dropdown")) {
+              dropdownGlass.classList.remove("active");
+            }
+          });
+        }
+
+        // Filter courses by category
+        categoryLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const selectedCategory =
+              this.getAttribute("data-filter").toLowerCase();
+
+            // Filter and show only matching courses
+            courseCards.forEach((card) => {
+              const cardCategories = card.getAttribute("data-category");
+
+              if (
+                cardCategories &&
+                cardCategories.toLowerCase().includes(selectedCategory)
+              ) {
+                card.style.display = "flex";
+                card.classList.remove("hidden");
+              } else {
+                card.style.display = "none";
+              }
+            });
+
+            // Close dropdown after selection
+            dropdownGlass.classList.remove("active");
+
+            // Scroll to courses section smoothly
+            document.querySelector(".career-video-section").scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          });
+        });
+
+        // Show All functionality - Popular Courses button
+        if (showAllBtn) {
+          showAllBtn.addEventListener("click", function () {
+            courseCards.forEach((card) => {
+              card.style.display = "flex";
+              card.classList.remove("hidden");
+            });
+          });
+        }
+      });
+    </script>
+    <!-- MEGA MENU CONTAINER -->
+    <div class="mega-wrapper" id="megaMenu">
+      <div class="mega-content" id="megaContent">
+        <!-- Content injects here via JS -->
+      </div>
+    </div>
+
+    <!-- MAIN SCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Tech - SAFARNAMA</title>
+    <link rel="stylesheet" href="mba.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="logo">
+            <img src="images/safarnama.png" alt="Safarnama">
+        </div>
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="career.html">Courses</a>
+            <a href="colleges.html">Colleges</a>
+        </nav>
+    </div>
+
+    <!-- Blue Navigation Bar -->
+    <div class="blue-navbar">
+        <div class="nav-items">
+            <a href="#" class="nav-item menu-btn" data-menu="mba">MBA</a>
+            <a href="#" class="nav-item menu-btn" data-menu="engineering">Engineering</a>
+            <a href="#" class="nav-item menu-btn" data-menu="medical">Medical</a>
+            <a href="#" class="nav-item menu-btn" data-menu="design">Design</a>
+            <a href="#" class="nav-item menu-btn" data-menu="abroad">Study Abroad</a>
+            <a href="#" class="nav-item menu-btn" data-menu="agriculture">Agriculture</a>
+            <a href="#" class="nav-item menu-btn" data-menu="online">Online</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Menu Grid -->
+        <div class="menu-grid">
+            <div class="menu-card active" onclick="showContent('overview')">
+                <div class="menu-icon">📋</div>
+                <div class="menu-title">B.Tech Overview</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('jobs')">
+                <div class="menu-icon">💼</div>
+                <div class="menu-title">Jobs</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('syllabus')">
+                <div class="menu-icon">📚</div>
+                <div class="menu-title">Syllabus</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('colleges')">
+                <div class="menu-icon">🏛️</div>
+                <div class="menu-title">Best B.Tech Colleges</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('online')">
+                <div class="menu-icon">💻</div>
+                <div class="menu-title">Online B.Tech</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('admission-process')">
+                <div class="menu-icon">📝</div>
+                <div class="menu-title">B.Tech Admission Process</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('specializations')">
+                <div class="menu-icon">🎯</div>
+                <div class="menu-title">B.Tech Specializations</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('admission2026')">
+                <div class="menu-icon">🎓</div>
+                <div class="menu-title">B.Tech Admission 2026</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('scholarship')">
+                <div class="menu-icon">💰</div>
+                <div class="menu-title">B.Tech Scholarship in India</div>
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section">
+            <!-- Overview Content -->
+            <div id="overview-content" class="content-item">
+                <p>Bachelor of Technology (Bachelor of Technology) is a popular program that offers comprehensive engineering education in various disciplines. It is designed to equip students with the necessary skills for a successful career in the field.</p>
+
+                <div class="info-box">
+                    <p><strong>Duration:</strong> 4 Years</p>
+                    <p><strong>Eligibility:</strong> 10+2 with PCM (min 75% for IITs)</p>
+                    <p><strong>Average Fees:</strong> ₹8 - 20 Lakhs</p>
+                    <p><strong>Average Starting Salary:</strong> ₹6 - 25 LPA</p>
+                </div>
+
+                <h3>Key Highlights</h3>
+                <ul>
+                    <li>Industry-relevant curriculum</li>
+                    <li>Practical training and projects</li>
+                    <li>Career growth opportunities</li>
+                    <li>Expert faculty guidance</li>
+                </ul>
+
+                <h3>Why Choose Bachelor of Technology?</h3>
+                <p>Choosing Bachelor of Technology opens up specific career paths in high-demand sectors. It offers a blend of theoretical knowledge and practical skills.</p>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Bachelor of Technology Guide</div>
+                        <div class="resource-desc">Download Brochure</div>
+                    </div>
+                </div>
+    </div>
+
+            <!-- Jobs Content -->
+            <div id="jobs-content" class="content-item hidden">
+                <p>Bachelor of Technology graduates have diverse career opportunities.</p>
+                <h3>Top Job Roles</h3>
+                <ul><li>Software Engineer</li><li>Civil Engineer</li><li>Mechanical Engineer</li><li>Data Scientist</li></ul>
+                <h3>Top Recruiters</h3>
+                <p>Google, Microsoft, L&T, Tata Motors, Infosys</p>
+    </div>
+
+            <!-- Syllabus Content -->
+            <div id="syllabus-content" class="content-item hidden">
+                <p>The Bachelor of Technology syllabus covers core and elective subjects.</p>
+                <h3>Core Subjects</h3>
+                <ul><li>Engineering Mathematics</li><li>Physics</li><li>Computing</li><li>Mechanics</li><li>Electronics</li></ul>
+    </div>
+
+            <!-- Best B.Tech Colleges Content -->
+            <div id="colleges-content" class="content-item hidden">
+                <p>Top institutes offering Bachelor of Technology.</p>
+                <h3>Top Colleges</h3>
+                <ul><li>IIT Bombay</li><li>IIT Delhi</li><li>BITS Pilani</li><li>NIT Trichy</li><li>VIT Vellore</li></ul>
+    </div>
+
+            <!-- Online B.Tech Content -->
+            <div id="online-content" class="content-item hidden">
+                <h2>Online B.Tech Programs</h2>
+                
+                <p>Online B.Tech programs offer flexibility and convenience for working professionals who want to pursue higher education without taking a career break. These programs provide the same quality education as traditional B.Tech with the added benefit of studying from anywhere.</p>
+
+                <h3>Benefits of Online B.Tech</h3>
+                <ul>
+                    <li>Study at your own pace and convenience</li>
+                    <li>Continue working while earning your degree</li>
+                    <li>Lower cost compared to traditional B.Tech programs</li>
+                    <li>Access to global faculty and diverse peer groups</li>
+                    <li>Digital learning resources and interactive sessions</li>
+                    <li>No relocation required</li>
+                    <li>Same degree value as regular B.Tech from UGC-approved universities</li>
+                </ul>
+
+                <h3>Top Online B.Tech Providers in India</h3>
+                <ul>
+                    <li><strong>NMIMS Global Access School</strong> - Fees: ₹2.75 Lakhs</li>
+                    <li><strong>Amity University Online</strong> - Fees: ₹3.5 Lakhs</li>
+                    <li><strong>Symbiosis Centre for Distance Learning</strong> - Fees: ₹3.5 Lakhs</li>
+                    <li><strong>IMT Ghaziabad</strong> - Fees: ₹4 Lakhs</li>
+                    <li><strong>XLRI Executive B.Tech</strong> - Fees: ₹8 Lakhs</li>
+                    <li><strong>IIM Executive Programs</strong> - Fees: ₹3-6 Lakhs</li>
+                    <li><strong>UpGrad B.Tech</strong> - Fees: ₹3-4 Lakhs</li>
+                </ul>
+
+                <h3>Specializations Available</h3>
+                <p>Finance, Marketing, HR, Operations, Data Analytics, Digital Marketing, Healthcare Management, International Business, and more.</p>
+
+                <div class="info-box">
+                    <p><strong>Duration:</strong> 2 years</p>
+                    <p><strong>Eligibility:</strong> Graduation in any stream</p>
+                    <p><strong>Mode:</strong> Online lectures, assignments, and exams</p>
+                </div>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Online B.Tech Guide</div>
+                        <div class="resource-desc">Complete information</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">💻</span>
+                        <div class="resource-title">Program Comparison</div>
+                        <div class="resource-desc">Compare online programs</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">Demo Classes</div>
+                        <div class="resource-desc">Sample lectures</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">✅</span>
+                        <div class="resource-title">Accreditation Check</div>
+                        <div class="resource-desc">Verify UGC approval</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- B.Tech Admission Process Content -->
+            <div id="admission-process-content" class="content-item hidden">
+                <p>Admission to Bachelor of Technology is typically based on JEE Main, JEE Advanced, BITSAT, VITEEE.</p>
+                <h3>Admission Steps</h3>
+                <ul><li>Appear for Entrance Exam</li><li>Counseling (JoSAA)</li><li>Seat Allocation</li><li>Document Verification</li></ul>
+                <h3>Entrance Exams</h3>
+                <p>JEE Main, JEE Advanced, BITSAT, VITEEE</p>
+    </div>
+
+            <!-- B.Tech Specializations Content -->
+            <div id="specializations-content" class="content-item hidden">
+                <p>Specializations in Bachelor of Technology allow students to focus on specific areas.</p>
+                <h3>Available Specializations</h3>
+                <ul><li>Computer Science</li><li>Information Technology</li><li>Electronics & Communication</li><li>Mechanical Engineering</li><li>Civil Engineering</li></ul>
+    </div>
+
+            <!-- B.Tech Admission 2026 Content -->
+            <div id="admission2026-content" class="content-item hidden">
+                <p>Bachelor of Technology Admission 2026 cycle is active. Key dates below:</p>
+                <h3>Important Dates</h3>
+                <ul><li>JEE Main Jan 2026</li><li>JEE Main Apr 2026</li><li>JEE Advanced May 2026</li></ul>
+    </div>
+
+            <!-- B.Tech Scholarship Content -->
+            <div id="scholarship-content" class="content-item hidden">
+                <p>Scholarships available for Bachelor of Technology students.</p>
+                <h3>Top Scholarships</h3>
+                <ul><li>Merit-cum-Means</li><li>Institute Scholarships</li><li>State Govt Scholarships</li></ul>
+    </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            // Hide all content items
+            const contentItems = document.querySelectorAll('.content-item');
+            contentItems.forEach(item => {
+                item.classList.add('hidden');
+            });
+
+            // Remove active class from all menu cards
+            const menuCards = document.querySelectorAll('.menu-card');
+            menuCards.forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // Show selected content
+            const selectedContent = document.getElementById(contentId + '-content');
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+            }
+
+            // Add active class to clicked menu card
+            event.currentTarget.classList.add('active');
+
+        // Scroll to content section smoothly
+            document.querySelector('.content-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Dropdown Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropBtn = document.querySelector('.drop-btn');
+            const dropdownGlass = document.querySelector('.dropdown-glass');
+            
+            if (dropBtn && dropdownGlass) {
+                dropBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdownGlass.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.dropdown')) {
+                        dropdownGlass.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- MEGA MENU CONTAINER -->
+    <div class="mega-wrapper" id="megaMenu">
+        <div class="mega-content" id="megaContent">
+            <!-- Content injects here via JS -->
+        </div>
+    </div>
+
+    <!-- MAIN SCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBA - SAFARNAMA</title>
+    <link rel="stylesheet" href="mba.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="logo">
+            <img src="images/safarnama.png" alt="Safarnama">
+        </div>
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="career.html">Courses</a>
+            <a href="colleges.html">Colleges</a>
+        </nav>
+    </div>
+
+    <!-- Blue Navigation Bar -->
+    <div class="blue-navbar">
+        <div class="nav-items">
+            <a href="#" class="nav-item menu-btn" data-menu="mba">MBA</a>
+            <a href="#" class="nav-item menu-btn" data-menu="engineering">Engineering</a>
+            <a href="#" class="nav-item menu-btn" data-menu="medical">Medical</a>
+            <a href="#" class="nav-item menu-btn" data-menu="design">Design</a>
+            <a href="#" class="nav-item menu-btn" data-menu="abroad">Study Abroad</a>
+            <a href="#" class="nav-item menu-btn" data-menu="agriculture">Agriculture</a>
+            <a href="#" class="nav-item menu-btn" data-menu="online">Online</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Menu Grid -->
+        <div class="menu-grid">
+            <div class="menu-card active" onclick="showContent('overview')">
+                <div class="menu-icon">📋</div>
+                <div class="menu-title">MBA Overview</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('jobs')">
+                <div class="menu-icon">💼</div>
+                <div class="menu-title">Jobs</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('syllabus')">
+                <div class="menu-icon">📚</div>
+                <div class="menu-title">Syllabus</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('colleges')">
+                <div class="menu-icon">🏛️</div>
+                <div class="menu-title">Best MBA Colleges</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('online')">
+                <div class="menu-icon">💻</div>
+                <div class="menu-title">Online MBA</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('admission-process')">
+                <div class="menu-icon">📝</div>
+                <div class="menu-title">MBA Admission Process</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('specializations')">
+                <div class="menu-icon">🎯</div>
+                <div class="menu-title">MBA Specializations</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('admission2026')">
+                <div class="menu-icon">🎓</div>
+                <div class="menu-title">MBA Admission 2026</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('scholarship')">
+                <div class="menu-icon">💰</div>
+                <div class="menu-title">MBA Scholarship in India</div>
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section">
+            <!-- Overview Content -->
+            <div id="overview-content" class="content-item">
+                <h2>MBA Overview</h2>
+                
+                <p>Master of Business Administration (MBA) is a prestigious postgraduate degree that equips students with essential business management skills, leadership qualities, and strategic thinking capabilities. It is one of the most sought-after degrees globally, opening doors to high-level management and executive positions.</p>
+
+                <div class="info-box">
+                    <p><strong>Duration:</strong> 2 years (Full-time) | 3 years (Part-time/Executive)</p>
+                    <p><strong>Eligibility:</strong> Bachelor's degree in any discipline with minimum 50% marks</p>
+                    <p><strong>Average Fees:</strong> ₹5 Lakhs - ₹25 Lakhs per annum</p>
+                    <p><strong>Average Starting Salary:</strong> ₹7 - ₹15 Lakhs per annum</p>
+                </div>
+
+                <h3>Key Highlights</h3>
+                <ul>
+                    <li>Comprehensive understanding of business functions and management principles</li>
+                    <li>Development of leadership and decision-making skills</li>
+                    <li>Networking opportunities with industry professionals and alumni</li>
+                    <li>Diverse specializations to choose from based on career goals</li>
+                    <li>High salary packages and rapid career growth opportunities</li>
+                    <li>Global career opportunities in multinational corporations</li>
+                    <li>Entrepreneurship development and startup support</li>
+                    <li>Industry exposure through internships and live projects</li>
+                </ul>
+
+                <h3>Why Choose MBA?</h3>
+                <p>An MBA degree provides a competitive edge in the job market, offering accelerated career progression, higher earning potential, and the opportunity to transition into management roles. It helps develop critical thinking, analytical skills, and business acumen essential for leadership positions.</p>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">MBA Brochure 2026</div>
+                        <div class="resource-desc">Complete guide to MBA programs</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Course Structure PDF</div>
+                        <div class="resource-desc">Detailed curriculum breakdown</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">MBA Introduction Video</div>
+                        <div class="resource-desc">Watch comprehensive overview</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📊</span>
+                        <div class="resource-title">Career Path Guide</div>
+                        <div class="resource-desc">Explore career opportunities</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jobs Content -->
+            <div id="jobs-content" class="content-item hidden">
+                <h2>MBA Jobs & Career Opportunities</h2>
+                
+                <p>MBA graduates have access to diverse and lucrative career opportunities across various industries. The degree opens doors to management, consulting, finance, marketing, operations, and entrepreneurship roles.</p>
+
+                <h3>Top Job Roles After MBA</h3>
+                <ul>
+                    <li><strong>Management Consultant:</strong> ₹8 - 15 Lakhs per annum (Advise organizations on strategy and operations)</li>
+                    <li><strong>Investment Banker:</strong> ₹10 - 20 Lakhs per annum (Financial advisory and deal structuring)</li>
+                    <li><strong>Marketing Manager:</strong> ₹7 - 12 Lakhs per annum (Brand strategy and campaign management)</li>
+                    <li><strong>Financial Analyst:</strong> ₹6 - 10 Lakhs per annum (Financial planning and analysis)</li>
+                    <li><strong>Operations Manager:</strong> ₹7 - 13 Lakhs per annum (Supply chain and process optimization)</li>
+                    <li><strong>Business Development Manager:</strong> ₹8 - 14 Lakhs per annum (Growth strategy and partnerships)</li>
+                    <li><strong>Product Manager:</strong> ₹10 - 18 Lakhs per annum (Product development and lifecycle management)</li>
+                    <li><strong>HR Manager:</strong> ₹6 - 11 Lakhs per annum (Talent acquisition and organizational development)</li>
+                    <li><strong>Data Analyst:</strong> ₹7 - 12 Lakhs per annum (Business intelligence and analytics)</li>
+                    <li><strong>Entrepreneur/Startup Founder:</strong> Variable income (Build and scale your own venture)</li>
+                </ul>
+
+                <h3>Top Recruiting Industries</h3>
+                <p>Consulting Firms, Investment Banks, IT Companies, FMCG Companies, E-commerce Giants, Pharmaceutical Companies, Manufacturing Sector, Startups, NGOs, and Government Organizations.</p>
+
+                <div class="info-box">
+                    <p><strong>Average Placement Rate:</strong> 85-95% in top B-schools</p>
+                    <p><strong>Top Recruiters:</strong> McKinsey, BCG, Goldman Sachs, Google, Amazon, Deloitte, KPMG, Unilever, P&G</p>
+                </div>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">MBA Career Guide PDF</div>
+                        <div class="resource-desc">Complete career pathways</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📊</span>
+                        <div class="resource-title">Salary Trends 2026</div>
+                        <div class="resource-desc">Industry-wise salary data</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">Career Success Stories</div>
+                        <div class="resource-desc">Alumni experiences</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">💡</span>
+                        <div class="resource-title">Interview Prep Guide</div>
+                        <div class="resource-desc">Ace your MBA interviews</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Syllabus Content -->
+            <div id="syllabus-content" class="content-item hidden">
+                <h2>MBA Syllabus</h2>
+                
+                <p>The MBA curriculum is designed to provide comprehensive knowledge of business management across various functional areas. The syllabus typically spans two years with a mix of core courses, electives, and practical learning.</p>
+
+                <h3>First Year - Core Courses</h3>
+                <ul>
+                    <li><strong>Semester 1:</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Principles of Management</li>
+                            <li>Managerial Economics</li>
+                            <li>Financial Accounting & Analysis</li>
+                            <li>Marketing Management</li>
+                            <li>Organizational Behavior</li>
+                            <li>Business Statistics</li>
+                            <li>Business Communication</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 15px;"><strong>Semester 2:</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Operations Management</li>
+                            <li>Human Resource Management</li>
+                            <li>Corporate Finance</li>
+                            <li>Marketing Research</li>
+                            <li>Management Information Systems</li>
+                            <li>Quantitative Techniques</li>
+                            <li>Business Environment & Ethics</li>
+                            <li>Summer Internship Project</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Second Year - Specialization & Electives</h3>
+                <ul>
+                    <li><strong>Semester 3:</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>Strategic Management</li>
+                            <li>Financial Management</li>
+                            <li>Business Law & Corporate Governance</li>
+                            <li>Entrepreneurship Development</li>
+                            <li>Specialization Electives (4-5 courses)</li>
+                            <li>Industry Project/Live Case Studies</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 15px;"><strong>Semester 4:</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>International Business Management</li>
+                            <li>Supply Chain Management</li>
+                            <li>Specialization Electives (4-5 courses)</li>
+                            <li>Capstone Project/Dissertation</li>
+                            <li>Management Simulation Games</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Additional Learning Components</h3>
+                <ul>
+                    <li>Industry Visits & Field Trips</li>
+                    <li>Guest Lectures by Industry Experts</li>
+                    <li>Workshops on Soft Skills & Leadership</li>
+                    <li>Business Plan Competitions</li>
+                    <li>Corporate Social Responsibility Projects</li>
+                </ul>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Complete Syllabus PDF</div>
+                        <div class="resource-desc">Semester-wise breakdown</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📚</span>
+                        <div class="resource-title">Study Material</div>
+                        <div class="resource-desc">Subject-wise notes</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">Syllabus Walkthrough</div>
+                        <div class="resource-desc">Video explanation</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📖</span>
+                        <div class="resource-title">Recommended Books</div>
+                        <div class="resource-desc">Essential reading list</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best MBA Colleges Content -->
+            <div id="colleges-content" class="content-item hidden">
+                <h2>Best MBA Colleges in India</h2>
+                
+                <p>India is home to some of the world's top business schools that offer exceptional MBA programs. Here's a comprehensive list of the best MBA colleges in India based on rankings, placements, and academic excellence.</p>
+
+                <h3>Top 10 MBA Colleges in India</h3>
+                <ul>
+                    <li><strong>Indian Institute of Management (IIM) Ahmedabad</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Average Package: ₹25-30 LPA</li>
+                            <li>Fees: ₹25-28 Lakhs (2 years)</li>
+                            <li>Entrance Exam: CAT</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Indian Institute of Management (IIM) Bangalore</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Average Package: ₹28-31 LPA</li>
+                            <li>Fees: ₹24-26 Lakhs (2 years)</li>
+                            <li>Entrance Exam: CAT</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Indian Institute of Management (IIM) Calcutta</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Average Package: ₹29-33 LPA</li>
+                            <li>Fees: ₹27 Lakhs (2 years)</li>
+                            <li>Entrance Exam: CAT</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>XLRI Jamshedpur</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Average Package: ₹25-28 LPA</li>
+                            <li>Fees: ₹26 Lakhs (2 years)</li>
+                            <li>Entrance Exam: XAT</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Faculty of Management Studies (FMS) Delhi</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Average Package: ₹22-25 LPA</li>
+                            <li>Fees: ₹2 Lakhs (2 years)</li>
+                            <li>Entrance Exam: CAT</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Indian Institute of Management (IIM) Lucknow</strong></li>
+                    <li><strong>Indian Institute of Management (IIM) Indore</strong></li>
+                    <li><strong>Indian Institute of Management (IIM) Kozhikode</strong></li>
+                    <li><strong>SP Jain Institute of Management & Research (SPJIMR) Mumbai</strong></li>
+                    <li><strong>Management Development Institute (MDI) Gurgaon</strong></li>
+                </ul>
+
+                <h3>Selection Criteria</h3>
+                <p>Top MBA colleges consider multiple factors including entrance exam scores (CAT/XAT/GMAT), academic performance, work experience, group discussions, personal interviews, and written ability tests.</p>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">College Rankings PDF</div>
+                        <div class="resource-desc">Complete rankings list</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🏛️</span>
+                        <div class="resource-title">College Comparison</div>
+                        <div class="resource-desc">Compare top B-schools</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">Campus Tour Videos</div>
+                        <div class="resource-desc">Virtual campus visits</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">💡</span>
+                        <div class="resource-title">Selection Tips</div>
+                        <div class="resource-desc">How to choose right college</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 25px; text-align: center;">
+                    <a href="colleges.html#mbaSection" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);">
+                        🏛️ View All MBA Colleges →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Online MBA Content -->
+            <div id="online-content" class="content-item hidden">
+                <h2>Online MBA Programs</h2>
+                
+                <p>Online MBA programs offer flexibility and convenience for working professionals who want to pursue higher education without taking a career break. These programs provide the same quality education as traditional MBA with the added benefit of studying from anywhere.</p>
+
+                <h3>Benefits of Online MBA</h3>
+                <ul>
+                    <li>Study at your own pace and convenience</li>
+                    <li>Continue working while earning your degree</li>
+                    <li>Lower cost compared to traditional MBA programs</li>
+                    <li>Access to global faculty and diverse peer groups</li>
+                    <li>Digital learning resources and interactive sessions</li>
+                    <li>No relocation required</li>
+                    <li>Same degree value as regular MBA from UGC-approved universities</li>
+                </ul>
+
+                <h3>Top Online MBA Providers in India</h3>
+                <ul>
+                    <li><strong>NMIMS Global Access School</strong> - Fees: ₹2.75 Lakhs</li>
+                    <li><strong>Amity University Online</strong> - Fees: ₹3.5 Lakhs</li>
+                    <li><strong>Symbiosis Centre for Distance Learning</strong> - Fees: ₹3.5 Lakhs</li>
+                    <li><strong>IMT Ghaziabad</strong> - Fees: ₹4 Lakhs</li>
+                    <li><strong>XLRI Executive MBA</strong> - Fees: ₹8 Lakhs</li>
+                    <li><strong>IIM Executive Programs</strong> - Fees: ₹3-6 Lakhs</li>
+                    <li><strong>UpGrad MBA</strong> - Fees: ₹3-4 Lakhs</li>
+                </ul>
+
+                <h3>Specializations Available</h3>
+                <p>Finance, Marketing, HR, Operations, Data Analytics, Digital Marketing, Healthcare Management, International Business, and more.</p>
+
+                <div class="info-box">
+                    <p><strong>Duration:</strong> 2 years</p>
+                    <p><strong>Eligibility:</strong> Graduation in any stream</p>
+                    <p><strong>Mode:</strong> Online lectures, assignments, and exams</p>
+                </div>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Online MBA Guide</div>
+                        <div class="resource-desc">Complete information</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">💻</span>
+                        <div class="resource-title">Program Comparison</div>
+                        <div class="resource-desc">Compare online programs</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">Demo Classes</div>
+                        <div class="resource-desc">Sample lectures</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">✅</span>
+                        <div class="resource-title">Accreditation Check</div>
+                        <div class="resource-desc">Verify UGC approval</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MBA Admission Process Content -->
+            <div id="admission-process-content" class="content-item hidden">
+                <h2>MBA Admission Process</h2>
+                
+                <p>The MBA admission process in India is comprehensive and competitive. Understanding each step is crucial for successful admission to top B-schools.</p>
+
+                <h3>Step-by-Step Admission Process</h3>
+                <ul>
+                    <li><strong>Step 1: Entrance Exam Preparation</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Register for CAT/XAT/GMAT/CMAT/MAT</li>
+                            <li>Prepare thoroughly for 6-8 months</li>
+                            <li>Take mock tests regularly</li>
+                            <li>Aim for 95+ percentile for top IIMs</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Step 2: Exam Registration & Attempt</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>CAT: Usually held in November</li>
+                            <li>XAT: Usually held in January</li>
+                            <li>GMAT: Year-round availability</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Step 3: Shortlisting</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>B-schools announce shortlists based on exam scores</li>
+                            <li>Academic performance and work experience considered</li>
+                            <li>Diversity factors may apply</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Step 4: Written Ability Test (WAT)</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Essay writing on current affairs or business topics</li>
+                            <li>15-30 minutes duration</li>
+                            <li>Tests communication and analytical skills</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Step 5: Group Discussion (GD)</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Discussion with 8-10 candidates</li>
+                            <li>Tests teamwork and communication</li>
+                            <li>15-20 minutes duration</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Step 6: Personal Interview (PI)</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Panel of 2-3 professors</li>
+                            <li>Questions on academics, work experience, current affairs</li>
+                            <li>20-30 minutes duration</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Step 7: Final Selection</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Based on composite scores</li>
+                            <li>Offers announced in April-May</li>
+                            <li>Payment of fees to confirm admission</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Important Documents Required</h3>
+                <ul>
+                    <li>10th & 12th mark sheets</li>
+                    <li>Graduation degree and transcripts</li>
+                    <li>Entrance exam scorecard</li>
+                    <li>Work experience certificates (if applicable)</li>
+                    <li>ID proof (Aadhar/PAN/Passport)</li>
+                    <li>Category certificate (if applicable)</li>
+                    <li>Passport size photographs</li>
+                </ul>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Admission Guide PDF</div>
+                        <div class="resource-desc">Complete process details</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📝</span>
+                        <div class="resource-title">Application Checklist</div>
+                        <div class="resource-desc">Document requirements</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">PI/GD Preparation</div>
+                        <div class="resource-desc">Expert guidance videos</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📅</span>
+                        <div class="resource-title">Important Dates</div>
+                        <div class="resource-desc">Exam & admission timeline</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MBA Specializations Content -->
+            <div id="specializations-content" class="content-item hidden">
+                <h2>MBA Specializations</h2>
+                
+                <p>MBA offers diverse specializations allowing students to focus on specific business domains aligned with their career goals. Choosing the right specialization is crucial for career success.</p>
+
+                <h3>Popular MBA Specializations</h3>
+                <ul>
+                    <li><strong>MBA in Finance</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Focus: Financial management, investment banking, corporate finance</li>
+                            <li>Career Options: Financial Analyst, Investment Banker, Portfolio Manager</li>
+                            <li>Average Salary: ₹8-15 LPA</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>MBA in Marketing</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Focus: Brand management, digital marketing, consumer behavior</li>
+                            <li>Career Options: Marketing Manager, Brand Manager, Market Research Analyst</li>
+                            <li>Average Salary: ₹7-12 LPA</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>MBA in Human Resource Management</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Focus: Talent management, organizational development, labor relations</li>
+                            <li>Career Options: HR Manager, Talent Acquisition Specialist, Training Manager</li>
+                            <li>Average Salary: ₹6-11 LPA</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>MBA in Operations & Supply Chain</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Focus: Logistics, supply chain optimization, quality management</li>
+                            <li>Career Options: Operations Manager, Supply Chain Analyst, Logistics Manager</li>
+                            <li>Average Salary: ₹7-13 LPA</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>MBA in Information Technology</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Focus: IT strategy, systems management, digital transformation</li>
+                            <li>Career Options: IT Manager, Tech Consultant, Product Manager</li>
+                            <li>Average Salary: ₹9-16 LPA</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>MBA in Data Analytics</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Focus: Big data, business intelligence, predictive analytics</li>
+                            <li>Career Options: Data Scientist, Business Analyst, Analytics Manager</li>
+                            <li>Average Salary: ₹10-18 LPA</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>MBA in International Business</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Focus: Global trade, cross-cultural management, export-import</li>
+                            <li>Career Options: International Business Manager, Export Manager</li>
+                            <li>Average Salary: ₹8-14 LPA</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>MBA in Entrepreneurship</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Focus: Startup management, venture capital, business planning</li>
+                            <li>Career Options: Entrepreneur, Business Consultant, Venture Capitalist</li>
+                            <li>Average Salary: Variable</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Emerging Specializations</h3>
+                <ul>
+                    <li>MBA in Healthcare Management</li>
+                    <li>MBA in Rural Management</li>
+                    <li>MBA in Sports Management</li>
+                    <li>MBA in Digital Marketing</li>
+                    <li>MBA in Financial Technology (FinTech)</li>
+                    <li>MBA in Sustainability</li>
+                </ul>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Specialization Guide</div>
+                        <div class="resource-desc">Detailed comparison</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎯</span>
+                        <div class="resource-title">Career Path Analysis</div>
+                        <div class="resource-desc">Find your fit</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">Expert Advice Videos</div>
+                        <div class="resource-desc">Choosing specialization</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📊</span>
+                        <div class="resource-title">Industry Demand</div>
+                        <div class="resource-desc">Market trends report</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MBA Admission 2026 Content -->
+            <div id="admission2026-content" class="content-item hidden">
+                <h2>MBA Admission 2026</h2>
+                
+                <p>MBA Admission 2026 process has begun with entrance exams scheduled throughout the year. Here's everything you need to know about the upcoming MBA admissions cycle.</p>
+
+                <h3>Important Exam Dates 2026</h3>
+                <ul>
+                    <li><strong>CAT 2025:</strong> Last Sunday of November 2025 (for MBA 2026-28 batch)</li>
+                    <li><strong>XAT 2026:</strong> First Sunday of January 2026</li>
+                    <li><strong>SNAP 2025:</strong> December 2025</li>
+                    <li><strong>NMAT 2025:</strong> October - December 2025</li>
+                    <li><strong>CMAT 2026:</strong> January 2026</li>
+                    <li><strong>MAT 2026:</strong> Multiple sessions (Feb, May, Sept, Dec)</li>
+                    <li><strong>GMAT:</strong> Year-round availability</li>
+                </ul>
+
+                <h3>Application Timeline</h3>
+                <ul>
+                    <li><strong>August - September 2025:</strong> CAT registration opens</li>
+                    <li><strong>October - November 2025:</strong> Exam preparation peak period</li>
+                    <li><strong>November 2025:</strong> CAT exam</li>
+                    <li><strong>January 2026:</strong> CAT results announced</li>
+                    <li><strong>February - April 2026:</strong> GD/PI rounds</li>
+                    <li><strong>May 2026:</strong> Final results and admissions</li>
+                    <li><strong>June 2026:</strong> Session begins</li>
+                </ul>
+
+                <h3>New Changes in 2026 Admissions</h3>
+                <ul>
+                    <li>Increased focus on diversity parameters</li>
+                    <li>More weightage to academic consistency</li>
+                    <li>Enhanced evaluation of work experience</li>
+                    <li>Digital interview processes may continue</li>
+                    <li>Some colleges accepting multiple exam scores</li>
+                </ul>
+
+                <div class="info-box">
+                    <p><strong>Pro Tip:</strong> Start preparation at least 6-8 months before the exam. Join coaching if needed. Practice mock tests regularly.</p>
+                </div>
+
+                <h3>Seats & Competition</h3>
+                <p>Top IIMs offer around 500-600 seats each. Total MBA seats across India: ~4 lakh. CAT registrations: ~2.5 lakh annually. Competition is intense for top B-schools with acceptance rates below 1%.</p>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Admission Calendar PDF</div>
+                        <div class="resource-desc">Complete schedule</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📝</span>
+                        <div class="resource-title">Registration Guide</div>
+                        <div class="resource-desc">Step-by-step process</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">Preparation Strategy</div>
+                        <div class="resource-desc">Expert tips video</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📊</span>
+                        <div class="resource-title">Cutoff Trends</div>
+                        <div class="resource-desc">Previous year analysis</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MBA Scholarship Content -->
+            <div id="scholarship-content" class="content-item hidden">
+                <h2>MBA Scholarships in India</h2>
+                
+                <p>Pursuing an MBA can be expensive, but numerous scholarships are available to deserving students based on merit, need, diversity, and other criteria. Here's a comprehensive guide to MBA scholarships in India.</p>
+
+                <h3>Merit-Based Scholarships</h3>
+                <ul>
+                    <li><strong>IIM Need-Based Financial Assistance</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Covers: Up to 100% tuition fees</li>
+                            <li>Eligibility: Based on family income</li>
+                            <li>Process: Apply after admission</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>Aditya Birla Scholarship</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Amount: ₹1.75 lakhs per year</li>
+                            <li>For: Top performers at select IIMs, XLRI, FMS</li>
+                            <li>Selection: Based on CAT scores and interviews</li>
+                        </ul>
+                    </li>
+                    <li style="margin-top: 12px;"><strong>HDFC Bank Education Loan Scholarship</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Amount: Up to ₹5 lakhs</li>
+                            <li>For: Students with education loans</li>
+                            <li>Criteria: Academic performance and financial need</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Government Scholarships</h3>
+                <ul>
+                    <li><strong>Post-Matric Scholarship for SC/ST/OBC:</strong> Financial assistance for tuition and living expenses</li>
+                    <li><strong>Central Sector Scheme:</strong> For students from low-income families</li>
+                    <li><strong>State Government Scholarships:</strong> Various state-specific schemes available</li>
+                </ul>
+
+                <h3>Corporate & Foundation Scholarships</h3>
+                <ul>
+                    <li><strong>Reliance Foundation Scholarships</strong> - ₹2-3 lakhs per year</li>
+                    <li><strong>Tata Capital Pankh Scholarship</strong> - Financial support for deserving students</li>
+                    <li><strong>OPJEMS Scholarship</strong> - For management students</li>
+                    <li><strong>Fair & Lovely Foundation Scholarship</strong> - For women pursuing MBA</li>
+                    <li><strong>L'Oréal India Scholarship</strong> - For women in business education</li>
+                </ul>
+
+                <h3>Education Loan Options</h3>
+                <ul>
+                    <li>Education loans available from all major banks</li>
+                    <li>Interest rates: 8-12% per annum</li>
+                    <li>Loan amount: Up to ₹30 lakhs</li>
+                    <li>Moratorium period: Course duration + 6 months</li>
+                    <li>No collateral for loans up to ₹7.5 lakhs (for top institutes)</li>
+                </ul>
+
+                <div class="info-box">
+                    <p><strong>Application Tip:</strong> Apply early for scholarships. Maintain good academic records. Prepare a strong SOP highlighting your achievements and financial need.</p>
+                </div>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Scholarship Directory</div>
+                        <div class="resource-desc">Complete list with links</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">💰</span>
+                        <div class="resource-title">Loan Guide PDF</div>
+                        <div class="resource-desc">Education loan details</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">Application Tips</div>
+                        <div class="resource-desc">How to apply video</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">📝</span>
+                        <div class="resource-title">SOP Samples</div>
+                        <div class="resource-desc">Statement of purpose examples</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            // Hide all content items
+            const contentItems = document.querySelectorAll('.content-item');
+            contentItems.forEach(item => {
+                item.classList.add('hidden');
+            });
+
+            // Remove active class from all menu cards
+            const menuCards = document.querySelectorAll('.menu-card');
+            menuCards.forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // Show selected content
+            const selectedContent = document.getElementById(contentId + '-content');
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+            }
+
+            // Add active class to clicked menu card
+            event.currentTarget.classList.add('active');
+
+        // Scroll to content section smoothly
+            document.querySelector('.content-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Dropdown Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropBtn = document.querySelector('.drop-btn');
+            const dropdownGlass = document.querySelector('.dropdown-glass');
+            
+            if (dropBtn && dropdownGlass) {
+                dropBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdownGlass.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.dropdown')) {
+                        dropdownGlass.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- MEGA MENU CONTAINER -->
+    <div class="mega-wrapper" id="megaMenu">
+        <div class="mega-content" id="megaContent">
+            <!-- Content injects here via JS -->
+        </div>
+    </div>
+
+    <!-- MAIN SCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>

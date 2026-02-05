@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Safarnama</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        .top-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #2c5aa0;
+        }
+
+        .go-home {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 30px;
+        }
+
+        .go-home a {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-size: 16px;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .go-home a:hover {
+            transform: translateX(-5px);
+        }
+
+        /* FOUNDER SECTION */
+        .founder-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 60px 30px;
+        }
+
+        .founder-section::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .founder-section::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .founder-container {
+            max-width: 1100px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .founder-image-wrapper {
+            flex: 0 0 350px;
+            opacity: 0;
+            animation: slideInLeft 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .founder-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .founder-image:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .founder-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .founder-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .founder-image:hover::before {
+            left: 100%;
+        }
+
+        .founder-content {
+            flex: 1;
+            opacity: 0;
+            animation: slideInRight 1s ease-out 0.6s forwards;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .founder-name {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .founder-title {
+            font-size: 22px;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .founder-description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 30px;
+            text-align: justify;
+            transition: all 0.5s ease;
+        }
+
+        .founder-description.hindi {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        .lang-toggle-btn {
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lang-toggle-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .lang-toggle-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .lang-toggle-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .lang-toggle-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .lang-toggle-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* PAGE TITLE */
+        .page-title {
+            background: #2c5aa0;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .page-title h1 {
+            font-size: 42px;
+            font-weight: 600;
+        }
+
+        /* CONTENT */
+        .content-wrap {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+        .content-box {
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-box h2 {
+            font-size: 36px;
+            color: #2c5aa0;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .content-box h3 {
+            font-size: 28px;
+            color: #2c5aa0;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        .content-box p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .content-box ul {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .content-box ul li {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .contact-links {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #2c5aa0;
+        }
+
+        .contact-links p {
+            margin-bottom: 15px;
+        }
+
+        .contact-links a {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: #667eea;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .founder-container {
+                flex-direction: column;
+                padding: 40px 30px;
+                gap: 40px;
+            }
+
+            .founder-image-wrapper {
+                flex: 0 0 auto;
+                max-width: 300px;
+            }
+
+            .founder-name {
+                font-size: 32px;
+            }
+
+            .founder-title {
+                font-size: 18px;
+            }
+
+            .founder-description {
+                font-size: 16px;
+            }
+
+            .content-box {
+                padding: 40px 30px;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .founder-section {
+                padding: 40px 20px;
+            }
+
+            .founder-container {
+                padding: 30px 20px;
+            }
+
+            .founder-name {
+                font-size: 28px;
+            }
+
+            .page-title h1 {
+                font-size: 32px;
+            }
+
+            .content-box {
+                padding: 30px 20px;
+            }
+
+            .content-box h2 {
+                font-size: 28px;
+            }
+
+            .content-box h3 {
+                font-size: 24px;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Text Animation */
+        .text-animate {
+            opacity: 0;
+            animation: textFadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes textFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="top-header">
+    <div class="header-inner">
+        <div class="logo">Your's Safarnama</div>
+
+        <nav class="nav-menu">
+            <a href="index.html">All Colleges</a>
+            <a href="#">Management</a>
+            <a href="#">Law</a>
+            <a href="#">Medical</a>
+            <a href="#">News</a>
+        </nav>
+    </div>
+</header>
+
+<!-- GO HOME -->
+<div class="go-home">
+    <a href="index.html">← Go to Home</a>
+</div>
+
+<!-- FOUNDER SECTION -->
+<section class="founder-section">
+    <div class="founder-container">
+        <div class="founder-image-wrapper">
+            <div class="founder-image">
+                <img src="images/founder.png" alt="Mr. Aman Anand">
+            </div>
+        </div>
+
+        <div class="founder-content">
+            <h1 class="founder-name">MR. Aman Anand</h1>
+            <p class="founder-title">Founder, Safarnama</p>
+            
+            <div class="founder-description" id="founderText">
+                At just 18 years old, Aman Anand embodies the spirit of entrepreneurship and determination. Hailing from a small village in Bihar, Aman has nurtured the dream of becoming a successful entrepreneur since childhood. Despite the challenges of limited resources and opportunities in his rural background, his unwavering passion for innovation and education drove him to create Safarnama—a platform designed to democratize access to educational information across India.
+                <br><br>
+                Aman's journey is a testament to the power of dreams and perseverance. Growing up in an environment where quality educational guidance was scarce, he experienced firsthand the struggles students face in navigating India's complex academic landscape. This personal experience became the foundation of Safarnama, where he channels his vision to empower millions of aspiring students with verified data, institutional rankings, and career guidance.
+                <br><br>
+                As a young entrepreneur from rural Bihar, Aman represents the new generation of Indian innovators who are breaking barriers and creating opportunities not just for themselves, but for countless others. His story inspires us to believe that no dream is too big, and no background is too humble to achieve greatness. Through Safarnama, Aman is not just building a platform—he is building a movement that transforms aspirations into achievements.
+            </div>
+
+            <button class="lang-toggle-btn" onclick="toggleLanguage()">
+                <span id="btnText">हिंदी में पढ़ें</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- BLUE TITLE BAR -->
+<section class="page-title">
+    <h1>About Us</h1>
+</section>
+
+<!-- CONTENT BOX -->
+<section class="content-wrap">
+    <div class="content-box">
+
+        <h2>About Safarnama</h2>
+        <p class="tagline">Empowering Aspirants through Clarity and Data.</p>
+
+        <p>
+            Welcome to <strong>Safarnama</strong>, a dedicated digital platform designed to simplify the complex world of
+            Indian education and competitive examinations. In an era where information is abundant but often fragmented,
+            Safarnama serves as a centralized hub for students, parents, and educators to find verified, real-time data
+            on their academic journey.
+        </p>
+
+        <h3>Our Mission</h3>
+        <p>
+            Our mission is simple: <strong>To democratize access to educational information.</strong>
+            Whether it is a prestigious government examination or a niche university course, we believe every student
+            deserves a clear roadmap. We aim to eliminate confusion by providing structured insights into exam schedules,
+            institutional rankings, and career opportunities.
+        </p>
+
+        <h3>What We Offer</h3>
+        <p>Safarnama is built on the pillars of research and transparency. Our platform offers:</p>
+
+        <ul>
+            <li><strong>Government Examinations:</strong> UPSC, SSC, state-level exams with notifications, syllabus, and eligibility.</li>
+            <li><strong>Institutional Rankings:</strong> Data-driven analysis of colleges and universities across India.</li>
+            <li><strong>Course Discovery:</strong> Structured course insights aligned with career outcomes.</li>
+        </ul>
+
+        <h3>Why Safarnama?</h3>
+        <ul>
+            <li><strong>Student-Centric Approach:</strong> Built by understanding real aspirant challenges.</li>
+            <li><strong>Verified Data:</strong> Information sourced from official portals and gazettes.</li>
+            <li><strong>Simple & Accessible:</strong> Clean interface with fast navigation.</li>
+        </ul>
+
+        <h3>Our Commitment</h3>
+        <p>
+            As India's educational ecosystem evolves, Safarnama evolves with it. We continuously expand our database,
+            refine ranking methodologies, and improve accuracy to give aspirants a competitive edge.
+        </p>
+
+        <h3>Join Our Journey</h3>
+        <p>
+            Education is a marathon, not a sprint. Safarnama is here to walk that journey with you — offering clarity,
+            data, and direction at every step.
+        </p>
+
+        <div class="contact-links">
+            <p><strong>For Academic Queries:</strong>
+                <a href="mailto:safarnamastudy@yahoo.com">safarnamastudy@yahoo.com</a>
+            </p>
+            <p><strong>For Institutional Collaborations:</strong>
+                <a href="mailto:safarnamsponserships@yahoo.com">safarnamsponserships@yahoo.com</a>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    let isHindi = false;
+
+    const englishText = `At just 18 years old, Aman Anand embodies the spirit of entrepreneurship and determination. Hailing from a small village in Bihar, Aman has nurtured the dream of becoming a successful entrepreneur since childhood. Despite the challenges of limited resources and opportunities in his rural background, his unwavering passion for innovation and education drove him to create Safarnama—a platform designed to democratize access to educational information across India.
+                <br><br>
+                Aman's journey is a testament to the power of dreams and perseverance. Growing up in an environment where quality educational guidance was scarce, he experienced firsthand the struggles students face in navigating India's complex academic landscape. This personal experience became the foundation of Safarnama, where he channels his vision to empower millions of aspiring students with verified data, institutional rankings, and career guidance.
+                <br><br>
+                As a young entrepreneur from rural Bihar, Aman represents the new generation of Indian innovators who are breaking barriers and creating opportunities not just for themselves, but for countless others. His story inspires us to believe that no dream is too big, and no background is too humble to achieve greatness. Through Safarnama, Aman is not just building a platform—he is building a movement that transforms aspirations into achievements.`;
+
+    const hindiText = `केवल 18 वर्ष की आयु में, अमन आनंद उद्यमिता और दृढ़ संकल्प की भावना का प्रतीक हैं। बिहार के एक छोटे से गांव से आने वाले अमन ने बचपन से ही एक सफल उद्यमी बनने का सपना पाला है। अपनी ग्रामीण पृष्ठभूमि में सीमित संसाधनों और अवसरों की चुनौतियों के बावजूद, नवाचार और शिक्षा के प्रति उनके अटूट जुनून ने उन्हें सफरनामा बनाने के लिए प्रेरित किया—एक ऐसा मंच जो पूरे भारत में शैक्षिक जानकारी तक पहुंच को लोकतांत्रिक बनाने के लिए डिज़ाइन किया गया है।
+                <br><br>
+                अमन की यात्रा सपनों और दृढ़ता की शक्ति का प्रमाण है। एक ऐसे वातावरण में पले-बढ़े जहां गुणवत्तापूर्ण शैक्षिक मार्गदर्शन दुर्लभ था, उन्होंने भारत के जटिल शैक्षणिक परिदृश्य को नेविगेट करने में छात्रों के संघर्षों को प्रत्यक्ष रूप से अनुभव किया। यह व्यक्तिगत अनुभव सफरनामा की नींव बन गया, जहां वह सत्यापित डेटा, संस्थागत रैंकिंग और करियर मार्गदर्शन के साथ लाखों महत्वाकांक्षी छात्रों को सशक्त बनाने के लिए अपनी दृष्टि को प्रसारित करते हैं।
+                <br><br>
+                ग्रामीण बिहार के एक युवा उद्यमी के रूप में, अमन भारतीय नवप्रवर्तकों की नई पीढ़ी का प्रतिनिधित्व करते हैं जो न केवल अपने लिए बल्कि अनगिनत अन्य लोगों के लिए बाधाओं को तोड़ रहे हैं और अवसर पैदा कर रहे हैं। उनकी कहानी हमें यह विश्वास करने के लिए प्रेरित करती है कि कोई सपना बहुत बड़ा नहीं है, और महानता हासिल करने के लिए कोई पृष्ठभूमि बहुत विनम्र नहीं है। सफरनामा के माध्यम से, अमन केवल एक मंच नहीं बना रहे हैं—वह एक ऐसा आंदोलन बना रहे हैं जो आकांक्षाओं को उपलब्धियों में बदल देता है।`;
+
+    function toggleLanguage() {
+        const textElement = document.getElementById('founderText');
+        const btnElement = document.getElementById('btnText');
+        
+        // Add animation class
+        textElement.style.opacity = '0';
+        textElement.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            if (isHindi) {
+                textElement.innerHTML = englishText;
+                btnElement.textContent = 'हिंदी में पढ़ें';
+                textElement.classList.remove('hindi');
+            } else {
+                textElement.innerHTML = hindiText;
+                btnElement.textContent = 'Read in English';
+                textElement.classList.add('hindi');
+            }
+            
+            isHindi = !isHindi;
+            
+            // Fade in animation
+            setTimeout(() => {
+                textElement.style.transition = 'all 0.6s ease';
+                textElement.style.opacity = '1';
+                textElement.style.transform = 'translateY(0)';
+            }, 50);
+        }, 300);
+    }
+
+    // Smooth scroll animation for content sections
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe content sections
+    document.addEventListener('DOMContentLoaded', () => {
+        const contentElements = document.querySelectorAll('.content-box h2, .content-box h3, .content-box p, .content-box ul');
+        contentElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS - SAFARNAMA</title>
+    <link rel="stylesheet" href="mba.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="logo">
+            <img src="images/safarnama.png" alt="Safarnama">
+        </div>
+        <nav class="top-nav">
+            <a href="index.html">Home</a>
+            <a href="career.html">Courses</a>
+            <a href="colleges.html">Colleges</a>
+        </nav>
+    </div>
+
+    <!-- Blue Navigation Bar -->
+    <div class="blue-navbar">
+        <div class="nav-items">
+            <a href="#" class="nav-item menu-btn" data-menu="mba">MBA</a>
+            <a href="#" class="nav-item menu-btn" data-menu="engineering">Engineering</a>
+            <a href="#" class="nav-item menu-btn" data-menu="medical">Medical</a>
+            <a href="#" class="nav-item menu-btn" data-menu="design">Design</a>
+            <a href="#" class="nav-item menu-btn" data-menu="abroad">Study Abroad</a>
+            <a href="#" class="nav-item menu-btn" data-menu="agriculture">Agriculture</a>
+            <a href="#" class="nav-item menu-btn" data-menu="online">Online</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Menu Grid -->
+        <div class="menu-grid">
+            <div class="menu-card active" onclick="showContent('overview')">
+                <div class="menu-icon">📋</div>
+                <div class="menu-title">MBBS Overview</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('jobs')">
+                <div class="menu-icon">💼</div>
+                <div class="menu-title">Jobs</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('syllabus')">
+                <div class="menu-icon">📚</div>
+                <div class="menu-title">Syllabus</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('colleges')">
+                <div class="menu-icon">🏛️</div>
+                <div class="menu-title">Best MBBS Colleges</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('online')">
+                <div class="menu-icon">💻</div>
+                <div class="menu-title">Online MBBS</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('admission-process')">
+                <div class="menu-icon">📝</div>
+                <div class="menu-title">MBBS Admission Process</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('specializations')">
+                <div class="menu-icon">🎯</div>
+                <div class="menu-title">MBBS Specializations</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('admission2026')">
+                <div class="menu-icon">🎓</div>
+                <div class="menu-title">MBBS Admission 2026</div>
+            </div>
+
+            <div class="menu-card" onclick="showContent('scholarship')">
+                <div class="menu-icon">💰</div>
+                <div class="menu-title">MBBS Scholarship in India</div>
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section">
+            <!-- Overview Content -->
+            <div id="overview-content" class="content-item">
+                <p>Bachelor of Medicine, Bachelor of Surgery (Bachelor of Medicine, Bachelor of Surgery) is a popular program that offers training to become a certified medical doctor. It is designed to equip students with the necessary skills for a successful career in the field.</p>
+
+                <div class="info-box">
+                    <p><strong>Duration:</strong> 5.5 Years</p>
+                    <p><strong>Eligibility:</strong> 10+2 with PCB (NEET qualified)</p>
+                    <p><strong>Average Fees:</strong> ₹5L - 1Cr+</p>
+                    <p><strong>Average Starting Salary:</strong> ₹8 - 15 LPA</p>
+                </div>
+
+                <h3>Key Highlights</h3>
+                <ul>
+                    <li>Industry-relevant curriculum</li>
+                    <li>Practical training and projects</li>
+                    <li>Career growth opportunities</li>
+                    <li>Expert faculty guidance</li>
+                </ul>
+
+                <h3>Why Choose Bachelor of Medicine, Bachelor of Surgery?</h3>
+                <p>Choosing Bachelor of Medicine, Bachelor of Surgery opens up specific career paths in high-demand sectors. It offers a blend of theoretical knowledge and practical skills.</p>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Bachelor of Medicine, Bachelor of Surgery Guide</div>
+                        <div class="resource-desc">Download Brochure</div>
+                    </div>
+                </div>
+    </div>
+
+            <!-- Jobs Content -->
+            <div id="jobs-content" class="content-item hidden">
+                <p>Bachelor of Medicine, Bachelor of Surgery graduates have diverse career opportunities.</p>
+                <h3>Top Job Roles</h3>
+                <ul><li>Doctor</li><li>Surgeon</li><li>Medical Officer</li><li>Specialist Consultant</li></ul>
+                <h3>Top Recruiters</h3>
+                <p>Apollo Hospitals, AIIMS, Fortis, Max Healthcare</p>
+    </div>
+
+            <!-- Syllabus Content -->
+            <div id="syllabus-content" class="content-item hidden">
+                <p>The Bachelor of Medicine, Bachelor of Surgery syllabus covers core and elective subjects.</p>
+                <h3>Core Subjects</h3>
+                <ul><li>Anatomy</li><li>Physiology</li><li>Biochemistry</li><li>Pathology</li><li>Medicine</li><li>Surgery</li></ul>
+    </div>
+
+            <!-- Best MBBS Colleges Content -->
+            <div id="colleges-content" class="content-item hidden">
+                <p>Top institutes offering Bachelor of Medicine, Bachelor of Surgery.</p>
+                <h3>Top Colleges</h3>
+                <ul><li>AIIMS Delhi</li><li>CMC Vellore</li><li>JIPMER</li><li>KGMU Lucknow</li></ul>
+    </div>
+
+            <!-- Online MBBS Content -->
+            <div id="online-content" class="content-item hidden">
+                <h2>Online MBBS Programs</h2>
+                
+                <p>Online MBBS programs offer flexibility and convenience for working professionals who want to pursue higher education without taking a career break. These programs provide the same quality education as traditional MBBS with the added benefit of studying from anywhere.</p>
+
+                <h3>Benefits of Online MBBS</h3>
+                <ul>
+                    <li>Study at your own pace and convenience</li>
+                    <li>Continue working while earning your degree</li>
+                    <li>Lower cost compared to traditional MBBS programs</li>
+                    <li>Access to global faculty and diverse peer groups</li>
+                    <li>Digital learning resources and interactive sessions</li>
+                    <li>No relocation required</li>
+                    <li>Same degree value as regular MBBS from UGC-approved universities</li>
+                </ul>
+
+                <h3>Top Online MBBS Providers in India</h3>
+                <ul>
+                    <li><strong>NMIMS Global Access School</strong> - Fees: ₹2.75 Lakhs</li>
+                    <li><strong>Amity University Online</strong> - Fees: ₹3.5 Lakhs</li>
+                    <li><strong>Symbiosis Centre for Distance Learning</strong> - Fees: ₹3.5 Lakhs</li>
+                    <li><strong>IMT Ghaziabad</strong> - Fees: ₹4 Lakhs</li>
+                    <li><strong>XLRI Executive MBBS</strong> - Fees: ₹8 Lakhs</li>
+                    <li><strong>IIM Executive Programs</strong> - Fees: ₹3-6 Lakhs</li>
+                    <li><strong>UpGrad MBBS</strong> - Fees: ₹3-4 Lakhs</li>
+                </ul>
+
+                <h3>Specializations Available</h3>
+                <p>Finance, Marketing, HR, Operations, Data Analytics, Digital Marketing, Healthcare Management, International Business, and more.</p>
+
+                <div class="info-box">
+                    <p><strong>Duration:</strong> 2 years</p>
+                    <p><strong>Eligibility:</strong> Graduation in any stream</p>
+                    <p><strong>Mode:</strong> Online lectures, assignments, and exams</p>
+                </div>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <span class="resource-icon">📄</span>
+                        <div class="resource-title">Online MBBS Guide</div>
+                        <div class="resource-desc">Complete information</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">💻</span>
+                        <div class="resource-title">Program Comparison</div>
+                        <div class="resource-desc">Compare online programs</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">🎥</span>
+                        <div class="resource-title">Demo Classes</div>
+                        <div class="resource-desc">Sample lectures</div>
+                    </div>
+                    <div class="resource-card">
+                        <span class="resource-icon">✅</span>
+                        <div class="resource-title">Accreditation Check</div>
+                        <div class="resource-desc">Verify UGC approval</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MBBS Admission Process Content -->
+            <div id="admission-process-content" class="content-item hidden">
+                <p>Admission to Bachelor of Medicine, Bachelor of Surgery is typically based on NEET UG.</p>
+                <h3>Admission Steps</h3>
+                <ul><li>NEET UG Exam</li><li>MCC Counseling</li><li>State Counseling</li><li>College Reporting</li></ul>
+                <h3>Entrance Exams</h3>
+                <p>NEET UG</p>
+    </div>
+
+            <!-- MBBS Specializations Content -->
+            <div id="specializations-content" class="content-item hidden">
+                <p>Specializations in Bachelor of Medicine, Bachelor of Surgery allow students to focus on specific areas.</p>
+                <h3>Available Specializations</h3>
+                <ul><li>General Medicine</li><li>General Surgery</li><li>Pediatrics (Post-MBBS)</li><li>Cardiology (Post-MBBS)</li></ul>
+    </div>
+
+            <!-- MBBS Admission 2026 Content -->
+            <div id="admission2026-content" class="content-item hidden">
+                <p>Bachelor of Medicine, Bachelor of Surgery Admission 2026 cycle is active. Key dates below:</p>
+                <h3>Important Dates</h3>
+                <ul><li>NEET UG May 2026</li></ul>
+    </div>
+
+            <!-- MBBS Scholarship Content -->
+            <div id="scholarship-content" class="content-item hidden">
+                <p>Scholarships available for Bachelor of Medicine, Bachelor of Surgery students.</p>
+                <h3>Top Scholarships</h3>
+                <ul><li>AIIMS Merit Scholarship</li><li>State Merit Scholarships</li></ul>
+    </div>
+        </div>
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            // Hide all content items
+            const contentItems = document.querySelectorAll('.content-item');
+            contentItems.forEach(item => {
+                item.classList.add('hidden');
+            });
+
+            // Remove active class from all menu cards
+            const menuCards = document.querySelectorAll('.menu-card');
+            menuCards.forEach(card => {
+                card.classList.remove('active');
+            });
+
+            // Show selected content
+            const selectedContent = document.getElementById(contentId + '-content');
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+            }
+
+            // Add active class to clicked menu card
+            event.currentTarget.classList.add('active');
+
+        // Scroll to content section smoothly
+            document.querySelector('.content-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Dropdown Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropBtn = document.querySelector('.drop-btn');
+            const dropdownGlass = document.querySelector('.dropdown-glass');
+            
+            if (dropBtn && dropdownGlass) {
+                dropBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdownGlass.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.dropdown')) {
+                        dropdownGlass.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- MEGA MENU CONTAINER -->
+    <div class="mega-wrapper" id="megaMenu">
+        <div class="mega-content" id="megaContent">
+            <!-- Content injects here via JS -->
+        </div>
+    </div>
+
+    <!-- MAIN SCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>

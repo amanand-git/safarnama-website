@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colleges by State - Safarnama</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="state-colleges.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/safarnama.png" alt="Safarnama">
+        </div>
+        <nav class="nav-menu">
+            <a href="career.html" class="orange-btn">Courses</a> 
+            <a href="colleges.html" class="orange-btn">Colleges</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <!-- Blue Navigation Bar -->
+    <div class="blue-navbar">
+        <div class="nav-items">
+            <a href="colleges.html#mbaSection" class="nav-item">MBA</a>
+            <a href="colleges.html#engineeringSection" class="nav-item">Engineering</a>
+            <a href="colleges.html#mbbsSection" class="nav-item">Medical</a>
+            <a href="colleges.html" class="nav-item">All Colleges</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="state-header">
+        <h1 id="pageTitle">Colleges by Location</h1>
+        <p id="pageSubtitle">Find the best colleges in your preferred state or city</p>
+        
+        <!-- Filters -->
+        <div class="state-selector">
+            <select id="stateSelect">
+                <option value="">All States</option>
+            </select>
+            <select id="citySelect">
+                <option value="">All Cities</option>
+            </select>
+            <select id="courseSelect">
+                <option value="">All Courses</option>
+                <option value="MBA">MBA</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="BBA">BBA</option>
+                <option value="MBBS">MBBS</option>
+                <option value="M.Tech">M.Tech</option>
+                <option value="LLB">LLB</option>
+                <option value="B.Pharma">B.Pharma</option>
+                <option value="BCA">BCA</option>
+            </select>
+            <button id="filterBtn" class="filter-apply-btn">Apply Filter</button>
+            <button id="clearBtn" class="filter-clear-btn">Clear</button>
+        </div>
+    </section>
+
+    <!-- Colleges List -->
+    <section class="colleges-container">
+        <div id="collegesGrid" class="colleges-grid">
+            <!-- Colleges will be populated by JS -->
+        </div>
+        
+        <div id="noResults" class="no-results" style="display: none;">
+            <div class="no-results-icon">🔍</div>
+            <h3>No colleges found</h3>
+            <p>Try selecting a different state or city</p>
+        </div>
+    </section>
+
+    <!-- College Detail Modal -->
+    <div id="collegeModal" class="college-modal">
+        <div class="college-modal-content">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <div id="modalContent">
+                <!-- College details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-copyright">
+            © 2026 Safarnamastudy.in — All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- College Data Scripts -->
+    <script src="mba-colleges-data.js"></script>
+    <script src="btech.js"></script>
+    <script src="bba.js"></script>
+    <script src="mbbs.js"></script>
+    <script src="mtech.js"></script>
+    <script src="llb.js"></script>
+    <script src="bpharma.js"></script>
+    <script src="bca.js"></script>
+    
+    <script src="state-colleges.js"></script>
+</body>
+</html>

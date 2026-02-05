@@ -1,0 +1,528 @@
+/* ================= RESET & BASE ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  background: #f5ebe0;
+  color: #000;
+}
+
+/* ================= TOP HEADER ================= */
+.top-header {
+  background: white;
+  height: 70px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.top-header .logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.top-header .logo img {
+  max-height: 155%;
+  width: auto;
+}
+
+.top-controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* ================= TOP BAR ================= */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo Section */
+.topbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  flex-direction: column;
+}
+
+.topbar .logo img {
+  width: 180px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.topbar .logo span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2b6cb0;
+  letter-spacing: 0.5px;
+}
+
+/* Controls (Right Side) */
+.topbar .controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Dropdown Button */
+.dropdown {
+  position: relative;
+}
+
+.drop-btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1.5px solid #ddd;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.drop-btn:hover {
+  border-color: #2b6cb0;
+  background: #f8f9fa;
+}
+
+/* Dropdown Glass Menu - Opens on Click */
+.dropdown-glass {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  min-width: 350px;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.dropdown-glass.active {
+  display: flex;
+}
+
+.glass-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.glass-col a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.glass-col a:hover {
+  background: #2b6cb0;
+  color: #fff;
+}
+
+/* Search Input */
+.search-input {
+  padding: 10px 20px 10px 45px;
+  border-radius: 25px;
+  border: 1.5px solid #ddd;
+  outline: none;
+  width: 280px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cpath d='m21 21-4.35-4.35'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  background-size: 18px;
+}
+
+.search-input:focus {
+  border-color: #2b6cb0;
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+}
+
+/* ================= MAIN CONTENT ================= */
+.career-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px 50px;
+}
+
+/* ================= CAREER GRID (Top Pills) ================= */
+.career-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.career-card {
+  padding: 12px 28px;
+  border-radius: 20px;
+  background: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.career-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= FILTER ROW (Popular Courses / Universities) ================= */
+.career-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filter-btn {
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.active {
+  background: #2b6cb0;
+  color: #fff;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= CAREER VIDEO SECTION (Course Cards Grid) ================= */
+.career-video-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 50px 50px;
+}
+
+.career-video-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* Individual Course Card */
+.course-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Thumbnail */
+.course-card .thumb {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.course-card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.course-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.4;
+}
+
+/* Hidden cards for Load More */
+.course-card.hidden {
+  display: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .career-video-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .career-video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .topbar {
+    padding: 15px 30px;
+  }
+
+  .top-header {
+    padding: 15px 20px;
+  }
+
+  .top-nav {
+    gap: 20px;
+  }
+
+  .nav-items {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-item {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+
+  .career-content,
+  .career-video-section {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .career-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .career-grid {
+    justify-content: center;
+  }
+}
+
+/* ================= PURPLE HOVER BORDER ================= */
+.course-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events: none;
+  border: 2px solid transparent;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.course-card:hover::before {
+  border-color: #2563eb; /* purple */
+  box-shadow:
+    0 0 0 1px #2563eb,
+    0 0 18px #2563eb;
+}
+
+/* ================= SAFARNAMA HEADER ================= */
+.sf-top-header {
+  background: #ffffff;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 100;
+}
+
+.sf-logo-text {
+  font-size: 26px;
+  font-weight: 800;
+  color: #2563eb;
+  letter-spacing: 0.5px;
+}
+
+.sf-top-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.sf-top-nav a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.sf-top-nav a:hover {
+  color: #2563eb;
+}
+
+/* Blue Navigation Bar */
+.blue-navbar {
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+  padding: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.nav-spacer {
+  display: none;
+}
+
+.exams-highlight,
+.safareasy-apps-btn {
+  position: absolute;
+  right: 0;
+}
+
+.exams-highlight {
+  right: 140px;
+}
+
+.safareasy-apps-btn {
+  right: 0;
+}
+
+.nav-item {
+  color: white;
+  padding: 18px 30px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.nav-item:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-item::after {
+  content: "▼";
+  margin-left: 8px;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+/* ================= MEGA MENU ================= */
+.mega-wrapper {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 900px;
+    background: #f5fbfa;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    /* transition: all 0.3s ease; */
+    z-index: 9999;
+    
+    /* Using display none/block logic from script.js, or class based toggling */
+    /* The script uses classList.add('active'), so we keep the opacity/visibility transition */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Active state */
+.mega-wrapper.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Content layout */
+.mega-content {
+    display: flex;
+    gap: 40px;
+    padding: 30px;
+}
+
+.mega-col {
+    min-width: 220px;
+}
+
+.mega-col h4 {
+    color: #0b6f6d;
+    margin-bottom: 10px;
+}
+
+.mega-col a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+.mega-col a:hover {
+    color: #0b6f6d;
+}
+

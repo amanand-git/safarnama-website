@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Certification - Safarnama</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        .page-hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 20px; }
+        .page-hero p { font-size: 20px; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+        
+        .content-container { padding: 0 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; }
+        
+        /* Table of Contents */
+        .toc-box {
+            background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px; margin-bottom: 40px;
+        }
+        .toc-box h3 { margin-bottom: 15px; color: #1e293b; }
+        .toc-box ul { list-style: none; display: flex; flex-wrap: wrap; gap: 15px; }
+        .toc-box a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        .toc-box a:hover { text-decoration: underline; }
+
+        .section { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .section h2 { color: #1e293b; margin-bottom: 25px; font-size: 32px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
+        .section h3 { color: #334155; margin-bottom: 20px; font-size: 24px; margin-top: 30px; }
+        .section p { color: #475569; line-height: 1.8; margin-bottom: 20px; font-size: 16px; text-align: justify; }
+        .section ul { margin-left: 20px; margin-bottom: 20px; color: #475569; line-height: 1.8; }
+        .section li { margin-bottom: 10px; }
+
+        /* Tables */
+        .data-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 16px; }
+        .data-table th, .data-table td { border: 1px solid #e2e8f0; padding: 15px; text-align: left; }
+        .data-table th { background-color: #f8fafc; color: #1e293b; font-weight: 600; }
+        .data-table tr:hover { background-color: #f8fafc; }
+
+        /* FAQ Accordion */
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-question { font-weight: 600; color: #1e293b; cursor: pointer; display: flex; justify-content: space-between; font-size: 18px; }
+        .faq-answer { margin-top: 15px; color: #64748b; display: none; }
+        .faq-item.active .faq-answer { display: block; }
+        
+        .cta-box { 
+            background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 40px; 
+            border-radius: 20px; text-align: center; margin-top: 60px;
+        }
+        .cta-box h2 { color: white; border: none; }
+        .cta-btn { 
+            background: white; color: #ea580c; padding: 15px 35px; border-radius: 30px; 
+            font-weight: 700; text-decoration: none; display: inline-block; margin-top: 20px;
+            transition: transform 0.3s;
+        }
+        .cta-btn:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <!-- FIXED LOGO HTML -->
+            <a href="index.html" style="display: flex; height: 100%; align-items: center;"><img src="images/safarnama.png" alt="Safarnama"></a>
+        </div>
+        <nav class="nav-menu">
+            <a href="career.html" class="orange-btn">Courses</a> 
+            <a href="colleges.html" class="orange-btn">Colleges</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+    </header>
+    
+    <!-- Blue Navbar -->
+    <div class="blue-navbar">
+      <div class="nav-items">
+        <a href="colleges.html#mbaSection" class="nav-item menu-btn" data-menu="mba">MBA</a>
+        <a href="colleges.html#engineeringSection" class="nav-item menu-btn" data-menu="engineering">Engineering</a>
+        <a href="colleges.html#mbbsSection" class="nav-item menu-btn" data-menu="medical">Medical</a>
+        <a href="career.html" class="nav-item menu-btn" data-menu="design">Design</a>
+        <a href="study-abroad.html" class="nav-item menu-btn" data-menu="abroad">Study Abroad</a>
+        <a href="colleges.html#agriSection" class="nav-item menu-btn" data-menu="agriculture">Agriculture</a>
+        <a href="online-courses.html" class="nav-item menu-btn" data-menu="online">Online</a>
+        <a href="exams.html" class="nav-item exams-highlight">Exams</a>
+      </div>
+    </div>
+
+    <section class="page-hero">
+        <h1>Data Science Certification</h1>
+        <p>Your ultimate guide to Data Science Certification. Discover top colleges, courses, eligibility criteria, admission processes, and career scope in 2026. Updated info for students and parents.</p>
+    </section>
+
+    <div class="content-container">
+        
+        <!-- TOC -->
+        <div class="toc-box">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#eligibility">Eligibility</a></li>
+                <li><a href="#top-colleges">Top Colleges</a></li>
+                <li><a href="#admission">Admission Process</a></li>
+                <li><a href="#syllabus">Syllabus</a></li>
+                <li><a href="#career">Career Scope</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+            </ul>
+        </div>
+
+        <div id="overview" class="section">
+            <h2>Overview</h2>
+            
+    <p>Data Science Certification opens up a world of opportunities in the field of Online.</p>
+    <p>The curriculum is designed to meet global standards, ensuring students are well-prepared for the industry. Institutes here focus on holistic development, combining academic rigor with practical exposure.</p>
+    <p>Whether you are looking for top-tier placements, research opportunities, or skill enhancement, pursuing Data Science Certification is a strategic step towards a successful career.</p>
+    
+        </div>
+
+        <div id="eligibility" class="section">
+            <h2>Eligibility Criteria</h2>
+            <p>To pursue Data Science Certification, candidates must meet specific eligibility requirements. These criteria ensure that students have the foundational knowledge required for the course.</p>
+            <table class="data-table">
+                <tr><th>Category</th><th>Requirement</th></tr>
+                <tr><td><strong>Academic Qualification</strong></td><td>10+2 or Graduation with minimum 50% aggregate marks.</td></tr>
+                <tr><td><strong>Age Limit</strong></td><td>Minimum 17 years (for UG) / No upper limit for most courses.</td></tr>
+                <tr><td><strong>Subject Requirements</strong></td><td>Relevant streams (Science/Commerce/Arts) depending on specialization.</td></tr>
+                <tr><td><strong>Entrance Exams</strong></td><td>National or State level entrance qualification required.</td></tr>
+            </table>
+            <p>Note: Eligibility may vary for reserved category candidates (SC/ST/OBC) as per government norms.</p>
+        </div>
+
+        <div id="top-colleges" class="section">
+            <h2>Top Institutes</h2>
+            <p>India is home to some of the world's best institutions for Online. Here is a list of top colleges known for their academic excellence, placement records, and infrastructure.</p>
+            <table class="data-table">
+                <tr><th>Rank</th><th>College Name</th><th>Location</th><th>Average Package</th></tr>
+                <tr><td>1</td><td>Coursera (Google/IBM)</td><td>Online</td><td>$39/mo</td></tr><tr><td>2</td><td>Udacity</td><td>Online</td><td>$399/mo</td></tr><tr><td>3</td><td>edX (Harvard/MIT)</td><td>Online</td><td>Free/Paid</td></tr><tr><td>4</td><td>Simplilearn</td><td>Online</td><td>Varies</td></tr><tr><td>5</td><td>Great Learning</td><td>Online</td><td>Varies</td></tr>
+            </table>
+        </div>
+
+        <div id="admission" class="section">
+            <h2>Admission Process 2026</h2>
+            <p>The admission process for Data Science Certification generally involves the following steps:</p>
+            <ul>
+                <li><strong>Step 1: Application Form:</strong> Fill out the application form for the respective entrance exam (e.g., JEE, CAT, NEET).</li>
+                <li><strong>Step 2: Entrance Exam:</strong> Appear for the exam and secure a valid score.</li>
+                <li><strong>Step 3: Counseling:</strong> Participate in the counseling process (JoSAA, MCC, etc.) for seat allocation.</li>
+                <li><strong>Step 4: Document Verification:</strong> Verify academic documents and pay the admission fee.</li>
+            </ul>
+            <p>Direct admission is also available in some private institutions under management quota.</p>
+        </div>
+
+        <div id="syllabus" class="section">
+            <h2>Course Curriculum & Syllabus</h2>
+            <p>The curriculum for Data Science Certification is designed to provide a balance of theoretical knowledge and practical exposure. Key subjects include:</p>
+            <ul>
+                <li>Python Programming</li><li>Statistics</li><li>Machine Learning Algorithms</li><li>Deep Learning</li><li>Data Visualization</li><li>Big Data</li><li>Capstone Project</li>
+            </ul>
+            <p>Students also undergo industrial training, internships, and project work to gain hands-on experience.</p>
+        </div>
+
+        <div id="career" class="section">
+            <h2>Career Scope & Job Opportunities</h2>
+            <p>Graduates in Online wide range of career opportunities in both public and private sectors. The demand for skilled professionals is growing rapidly.</p>
+            <table class="data-table">
+                <tr><th>Job Profile</th><th>Description</th><th>Avg. Salary (LPA)</th></tr>
+                <tr><td>Remote Developer</td><td>Work from anywhere</td><td>$50k-100k</td></tr><tr><td>Freelance Consultant</td><td>Project based work</td><td>Varies</td></tr><tr><td>Digital Marketer</td><td>Online campaigns</td><td>5-12 LPA</td></tr>
+            </table>
+            <p>With experience and higher education, professionals can advance to leadership roles with significantly higher salary packages.</p>
+        </div>
+
+        <div id="faqs" class="section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><div class="faq-question">What is the duration of course? <span>+</span></div><div class="faq-answer">Typically, UG courses are 3-4 years, and PG courses are 2 years.</div></div><div class="faq-item"><div class="faq-question">Is Data Science Certification a good career option? <span>+</span></div><div class="faq-answer">Yes, it offers excellent opportunities in the growing market.</div></div><div class="faq-item"><div class="faq-question">What are the entrance exams? <span>+</span></div><div class="faq-answer">Entrance is usually through national or state level exams like JEE, NEET, CAT, etc.</div></div><div class="faq-item"><div class="faq-question">What is the average fee? <span>+</span></div><div class="faq-answer">Fees range from INR 50k to 20 Lakhs depending on the institute.</div></div>
+        </div>
+
+        <div class="cta-box">
+            <h2>Need Personalized Guidance?</h2>
+            <p>Our experts can help you choose the right college and course for your future.</p>
+            <a href="contact.html" class="cta-btn">Contact a Counsellor</a>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-copyright">© 2026 Safarnamastudy.in — All Rights Reserved</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                item.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
