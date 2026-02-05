@@ -1,11 +1,11 @@
 // ============================================
-// OPENROUTER API CONFIGURATION (DeepSeek R1)
+// SAFARNAMA AI - API CONFIGURATION
 // ============================================
-// Get your FREE API key at: https://openrouter.ai/keys
-const OPENROUTER_API_KEY = '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';
+// API requests are proxied through Cloudflare Pages Function
+// The API key is stored securely on the server (not exposed to users)
 
-// OpenRouter API endpoint
-const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
+// Your Cloudflare Pages Function endpoint (proxies to OpenRouter)
+const API_ENDPOINT = '/api/chat';
 
 // DeepSeek R1 model - FREE and powerful!
 const MODEL_NAME = 'deepseek/deepseek-r1';
@@ -372,11 +372,11 @@ chatInput.addEventListener('paste', () => {
 });
 
 // ============================================
-// OPENROUTER API (DeepSeek R1)
+// CLOUDFLARE PAGES FUNCTION API CALL
 // ============================================
 async function getAIResponse(userMessage) {
     try {
-        console.log('🚀 Calling OpenRouter API with DeepSeek R1...');
+        console.log('🚀 Calling Safarnama AI API...');
         console.log('📝 User Message:', userMessage);
         
         // Build conversation history for context
@@ -400,21 +400,18 @@ async function getAIResponse(userMessage) {
             top_p: 0.9,
         };
 
-        console.log('📤 Request Body:', JSON.stringify(requestBody, null, 2));
+        console.log('📤 Sending request to server...');
 
-        const response = await fetch(OPENROUTER_API_URL, {
+        // Call our Cloudflare Pages Function (which proxies to OpenRouter)
+        const response = await fetch(API_ENDPOINT, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
-                'Content-Type': 'application/json',
-                'HTTP-Referer': window.location.href,
-                'X-Title': 'Safarnama AI Chatbot'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(requestBody)
         });
 
         console.log('📊 Response Status:', response.status);
-        console.log('📊 Response OK:', response.ok);
 
         if (!response.ok) {
             const errorText = await response.text();
@@ -428,20 +425,20 @@ async function getAIResponse(userMessage) {
             }
 
             if (response.status === 401) {
-                return "❌ **Authentication Error (401)**\n\nYour API key is invalid or missing.\n\n**How to fix:**\n1. Go to: https://openrouter.ai/keys\n2. Sign up or log in\n3. Create a new API key\n4. Copy it carefully\n5. Replace 'YOUR_OPENROUTER_API_KEY_HERE' in the JavaScript file\n6. Refresh the page";
+                return "❌ **Authentication Error (401)**\n\nThe server's API key is invalid.\n\nPlease contact the site administrator.";
             } else if (response.status === 402) {
-                return "❌ **Payment Required (402)**\n\nYour OpenRouter account needs credits.\n\n**Note:** DeepSeek R1 is FREE, but you may need to:\n1. Add a payment method (won't be charged for free models)\n2. Check your credit balance at: https://openrouter.ai/credits\n\nOr try a different free model!";
+                return "❌ **Payment Required (402)**\n\nThe API account needs credits.\n\nPlease try again later or contact the site administrator.";
             } else if (response.status === 429) {
-                return "⏰ **Rate Limit Exceeded**\n\nYou've sent too many requests.\n\nPlease wait a moment and try again.";
-            } else if (response.status === 400) {
-                return `❌ **Bad Request (400)**\n\n${errorData.error?.message || 'Invalid request format'}\n\nPlease check:\n- Your API key is correct\n- The model name is valid`;
+                return "⏰ **Rate Limit Exceeded**\n\nToo many requests. Please wait a moment and try again.";
+            } else if (response.status === 500) {
+                return "❌ **Server Error**\n\nThe AI service is temporarily unavailable.\n\nPlease try again in a few moments.";
             }
             
-            return `❌ **API Error (${response.status})**\n\n${errorData.error?.message || 'Unknown error occurred'}\n\nPlease check the browser console for details.`;
+            return `❌ **Error (${response.status})**\n\n${errorData.error?.message || 'Something went wrong'}\n\nPlease try again later.`;
         }
 
         const data = await response.json();
-        console.log('✅ API Response:', JSON.stringify(data, null, 2));
+        console.log('✅ API Response received');
 
         // Extract the response text
         if (data.choices && data.choices.length > 0) {
@@ -463,14 +460,13 @@ async function getAIResponse(userMessage) {
             return `❌ **Error:** ${data.error.message}`;
         }
         
-        return "❌ Unexpected response format. The API returned data but it couldn't be parsed.\n\nCheck the browser console for details.";
+        return "❌ Unexpected response. Please try again.";
         
     } catch (error) {
         console.error('💥 Fetch Error:', error);
-        console.error('Error details:', error.message);
         
         if (error.name === 'TypeError' && error.message.includes('fetch')) {
-            return "🌐 **Network Error**\n\nCannot connect to OpenRouter API.\n\n**Please check:**\n1. Your internet connection\n2. CORS/browser restrictions\n3. Try opening in a new tab\n4. Check if OpenRouter.ai is accessible";
+            return "🌐 **Network Error**\n\nCannot connect to the server.\n\n**Please check:**\n1. Your internet connection\n2. Try refreshing the page";
         }
         
         return `🌐 **Network Error**\n\n${error.message}\n\nPlease check your internet connection and try again.`;
@@ -734,14 +730,9 @@ attachBtn.addEventListener('click', () => fileInput.click());
 window.addEventListener('load', () => chatInput.focus());
 
 console.log('✅ Safarnama AI Ready with DeepSeek R1!');
-console.log('🔑 API Key:', OPENROUTER_API_KEY === 'YOUR_OPENROUTER_API_KEY_HERE' ? '❌ NOT SET - Please add your key!' : '✓ Configured');
-console.log('🌐 API Endpoint:', OPENROUTER_API_URL);
+console.log('🔑 API Key: Securely stored on server (Cloudflare Pages Function)');
+console.log('🌐 API Endpoint:', API_ENDPOINT);
 console.log('🤖 Model:', MODEL_NAME);
-console.log('\n📚 To get your FREE API key:');
-console.log('1. Visit: https://openrouter.ai/keys');
-console.log('2. Sign up/Login');
-console.log('3. Create a new API key');
-console.log('4. Replace YOUR_OPENROUTER_API_KEY_HERE in the code');
 
 
 
