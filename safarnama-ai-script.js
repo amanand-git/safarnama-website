@@ -2,7 +2,7 @@
 // OPENROUTER API CONFIGURATION (DeepSeek R1)
 // ============================================
 // Get your FREE API key at: https://openrouter.ai/keys
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = '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';
 
 // OpenRouter API endpoint
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
